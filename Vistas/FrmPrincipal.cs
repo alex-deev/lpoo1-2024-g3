@@ -20,5 +20,11 @@ namespace Vistas
         {
             Application.Exit();
         }
+
+        private void itemCategorias_Click(object sender, EventArgs e)
+        {
+            FrmCategoria frmCategoria = new FrmCategoria();
+            frmCategoria.Show();
+        }
     }
 }

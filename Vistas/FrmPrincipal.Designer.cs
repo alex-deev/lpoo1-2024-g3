@@ -29,50 +29,51 @@
         private void InitializeComponent()
         {
             this.menuInicio = new System.Windows.Forms.MenuStrip();
-            this.categoriaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.disciplinaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.participantesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.salir = new System.Windows.Forms.ToolStripMenuItem();
+            this.itemCategorias = new System.Windows.Forms.ToolStripMenuItem();
+            this.itemDiciplinas = new System.Windows.Forms.ToolStripMenuItem();
+            this.itemParticipantes = new System.Windows.Forms.ToolStripMenuItem();
+            this.itemSalir = new System.Windows.Forms.ToolStripMenuItem();
             this.menuInicio.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuInicio
             // 
             this.menuInicio.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.categoriaToolStripMenuItem,
-            this.disciplinaToolStripMenuItem,
-            this.participantesToolStripMenuItem,
-            this.salir});
+            this.itemCategorias,
+            this.itemDiciplinas,
+            this.itemParticipantes,
+            this.itemSalir});
             this.menuInicio.Location = new System.Drawing.Point(0, 0);
             this.menuInicio.Name = "menuInicio";
             this.menuInicio.Size = new System.Drawing.Size(461, 24);
             this.menuInicio.TabIndex = 0;
             this.menuInicio.Text = "menuStrip1";
             // 
-            // categoriaToolStripMenuItem
+            // itemCategorias
             // 
-            this.categoriaToolStripMenuItem.Name = "categoriaToolStripMenuItem";
-            this.categoriaToolStripMenuItem.Size = new System.Drawing.Size(75, 20);
-            this.categoriaToolStripMenuItem.Text = "Categorias";
+            this.itemCategorias.Name = "itemCategorias";
+            this.itemCategorias.Size = new System.Drawing.Size(75, 20);
+            this.itemCategorias.Text = "Categorias";
+            this.itemCategorias.Click += new System.EventHandler(this.itemCategorias_Click);
             // 
-            // disciplinaToolStripMenuItem
+            // itemDiciplinas
             // 
-            this.disciplinaToolStripMenuItem.Name = "disciplinaToolStripMenuItem";
-            this.disciplinaToolStripMenuItem.Size = new System.Drawing.Size(75, 20);
-            this.disciplinaToolStripMenuItem.Text = "Disciplinas";
+            this.itemDiciplinas.Name = "itemDiciplinas";
+            this.itemDiciplinas.Size = new System.Drawing.Size(75, 20);
+            this.itemDiciplinas.Text = "Disciplinas";
             // 
-            // participantesToolStripMenuItem
+            // itemParticipantes
             // 
-            this.participantesToolStripMenuItem.Name = "participantesToolStripMenuItem";
-            this.participantesToolStripMenuItem.Size = new System.Drawing.Size(87, 20);
-            this.participantesToolStripMenuItem.Text = "Participantes";
+            this.itemParticipantes.Name = "itemParticipantes";
+            this.itemParticipantes.Size = new System.Drawing.Size(87, 20);
+            this.itemParticipantes.Text = "Participantes";
             // 
-            // salir
+            // itemSalir
             // 
-            this.salir.Name = "salir";
-            this.salir.Size = new System.Drawing.Size(41, 20);
-            this.salir.Text = "Salir";
-            this.salir.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
+            this.itemSalir.Name = "itemSalir";
+            this.itemSalir.Size = new System.Drawing.Size(41, 20);
+            this.itemSalir.Text = "Salir";
+            this.itemSalir.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
             // FrmPrincipal
             // 
@@ -93,9 +94,9 @@
         #endregion
 
         private System.Windows.Forms.MenuStrip menuInicio;
-        private System.Windows.Forms.ToolStripMenuItem categoriaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem disciplinaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem participantesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem salir;
+        private System.Windows.Forms.ToolStripMenuItem itemCategorias;
+        private System.Windows.Forms.ToolStripMenuItem itemDiciplinas;
+        private System.Windows.Forms.ToolStripMenuItem itemParticipantes;
+        private System.Windows.Forms.ToolStripMenuItem itemSalir;
     }
 }
