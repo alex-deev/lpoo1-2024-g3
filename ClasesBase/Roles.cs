@@ -9,5 +9,12 @@ namespace ClasesBase
     {
         public int Rol_Codigo { get; set; }
         public string Rol_Descripcion { get; set; }
+
+        public Roles(int rolCodigo, string rolDescripcion)
+        {
+            Rol_Codigo = rolCodigo;
+            Rol_Descripcion = rolDescripcion;
+        }
     }
+
 }
