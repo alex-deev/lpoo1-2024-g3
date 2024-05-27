@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ClasesBase
 {
-    class Atleta
+    public class Atleta
     {
         public int Atl_ID { get; set; }
         public string Atl_DNI { get; set; }
