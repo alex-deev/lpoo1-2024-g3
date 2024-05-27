@@ -61,19 +61,21 @@
             this.itemDiciplinas.Name = "itemDiciplinas";
             this.itemDiciplinas.Size = new System.Drawing.Size(75, 20);
             this.itemDiciplinas.Text = "Disciplinas";
+            this.itemDiciplinas.Click += new System.EventHandler(this.itemDiciplinas_Click);
             // 
             // itemParticipantes
             // 
             this.itemParticipantes.Name = "itemParticipantes";
             this.itemParticipantes.Size = new System.Drawing.Size(87, 20);
             this.itemParticipantes.Text = "Participantes";
+            this.itemParticipantes.Click += new System.EventHandler(this.itemParticipantes_Click);
             // 
             // itemSalir
             // 
             this.itemSalir.Name = "itemSalir";
             this.itemSalir.Size = new System.Drawing.Size(41, 20);
             this.itemSalir.Text = "Salir";
-            this.itemSalir.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
+            this.itemSalir.Click += new System.EventHandler(this.itemSalir_Click);
             // 
             // FrmPrincipal
             // 

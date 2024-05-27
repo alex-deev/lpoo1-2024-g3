@@ -16,7 +16,7 @@ namespace Vistas
             InitializeComponent();
         }
 
-        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        private void itemSalir_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
@@ -25,6 +25,18 @@ namespace Vistas
         {
             FrmCategoria frmCategoria = new FrmCategoria();
             frmCategoria.Show();
+        }
+
+        private void itemDiciplinas_Click(object sender, EventArgs e)
+        {
+            FrmDisciplina frmDiciplina = new FrmDisciplina();
+            frmDiciplina.Show();
+        }
+
+        private void itemParticipantes_Click(object sender, EventArgs e)
+        {
+            FrmParticipante frmParticipante = new FrmParticipante();
+            frmParticipante.Show();
         }
     }
 }
