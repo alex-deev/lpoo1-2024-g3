@@ -29,6 +29,8 @@ namespace Vistas
             Usuario oUsuario2 = new Usuario(2, "JuanC", "456", "Juan Cardozo", 2);
             Usuario oUsuario3 = new Usuario(3, "CarlosG", "789", "Carlos Gerez", 3);
 
+            FrmPrincipal oFormPrincipal = new FrmPrincipal();
+
             if (oUsuario1.Usu_NombreUsuario == txtNombreUsuario.Text && oUsuario1.Usu_Contraseña == txtContraseña.Text)
             {
                 bUserFound = true;
@@ -46,6 +48,7 @@ namespace Vistas
             if (bUserFound)
             {
                 MessageBox.Show("Bienvenido/a: " + txtNombreUsuario.Text);
+                oFormPrincipal.Show();
             }
             else
             {

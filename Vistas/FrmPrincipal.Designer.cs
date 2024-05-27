@@ -32,6 +32,7 @@
             this.categoriaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.disciplinaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.participantesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.salir = new System.Windows.Forms.ToolStripMenuItem();
             this.menuInicio.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -40,7 +41,8 @@
             this.menuInicio.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.categoriaToolStripMenuItem,
             this.disciplinaToolStripMenuItem,
-            this.participantesToolStripMenuItem});
+            this.participantesToolStripMenuItem,
+            this.salir});
             this.menuInicio.Location = new System.Drawing.Point(0, 0);
             this.menuInicio.Name = "menuInicio";
             this.menuInicio.Size = new System.Drawing.Size(461, 24);
@@ -65,6 +67,13 @@
             this.participantesToolStripMenuItem.Size = new System.Drawing.Size(87, 20);
             this.participantesToolStripMenuItem.Text = "Participantes";
             // 
+            // salir
+            // 
+            this.salir.Name = "salir";
+            this.salir.Size = new System.Drawing.Size(41, 20);
+            this.salir.Text = "Salir";
+            this.salir.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
+            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -87,5 +96,6 @@
         private System.Windows.Forms.ToolStripMenuItem categoriaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem disciplinaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem participantesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem salir;
     }
 }
