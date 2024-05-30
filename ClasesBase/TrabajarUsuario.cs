@@ -8,7 +8,7 @@ using System.Data.SqlClient;
 
 namespace ClasesBase
 {
-    class TrabajarUsuario
+    public class TrabajarUsuario
     {
         static string cadenaConexion = ClasesBase.Properties.Settings.Default.comdepConnection;
 
