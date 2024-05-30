@@ -41,6 +41,10 @@ namespace Vistas
 
         private void itemUsuarios_Click(object sender, EventArgs e)
         {
+            // Cambia el Cursor de Windows al tipo 'Esperando' termporalmente,
+            // el cursor vuelve al tipo 'Normal' una vez aparece el nuevo Form en pantalla
+            Cursor.Current = Cursors.WaitCursor;
+
             FrmUsuario frmUsuario = new FrmUsuario();
             frmUsuario.Show();
         }

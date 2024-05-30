@@ -34,6 +34,46 @@ namespace ClasesBase
             return dt;
         }
 
+        public static void InsertarUsuario(Usuario u)
+        {
+            SqlConnection cnn = new SqlConnection(cadenaConexion);
+
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "INSERT INTO Usuario (NombreUsuario, Contrasenia, ApellidoNombre, Rol_Codigo) ";
+            cmd.CommandText += " VALUES (@usuario, @contra, @ape_nom, @rol_cod) ";
+            cmd.Parameters.AddWithValue("@usuario", u.Usu_NombreUsuario);
+            cmd.Parameters.AddWithValue("@contra", u.Usu_Contraseña);
+            cmd.Parameters.AddWithValue("@ape_nom", u.Usu_ApellidoNombre);
+            cmd.Parameters.AddWithValue("@rol_cod", u.Rol_Codigo);
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = cnn;
+
+            cnn.Open();
+            cmd.ExecuteNonQuery();
+            cnn.Close();
+        }
+
+        public static void ActualizarUsuario(Usuario u)
+        {
+            SqlConnection cnn = new SqlConnection(cadenaConexion);
+
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "UPDATE Usuario SET NombreUsuario=@usuario, Contrasenia=@contra, ";
+            cmd.CommandText += " ApellidoNombre=@ape_nom, Rol_Codigo=@rol_cod ";
+            cmd.CommandText += " WHERE ID=@id";
+            cmd.Parameters.AddWithValue("@id", u.Usu_ID);
+            cmd.Parameters.AddWithValue("@usuario", u.Usu_NombreUsuario);
+            cmd.Parameters.AddWithValue("@contra", u.Usu_Contraseña);
+            cmd.Parameters.AddWithValue("@ape_nom", u.Usu_ApellidoNombre);
+            cmd.Parameters.AddWithValue("@rol_cod", u.Rol_Codigo);
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = cnn;
+            
+            cnn.Open();
+            cmd.ExecuteNonQuery();
+            cnn.Close();
+        }
+
         public static DataTable ListarRoles()
         {
             SqlConnection cnn = new SqlConnection(cadenaConexion);

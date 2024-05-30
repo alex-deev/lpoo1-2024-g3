@@ -13,6 +13,8 @@ namespace ClasesBase
         public string Usu_ApellidoNombre { get; set; }
         public int Rol_Codigo { get; set; }
 
+        public Usuario() { }
+
         public Usuario(int usId, string nombreUsuario, string contraseña, string apellidoYnombre, int rol_Codigo)
         {
             Usu_ID = usId;
