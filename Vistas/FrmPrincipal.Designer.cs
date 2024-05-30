@@ -33,6 +33,7 @@
             this.itemDiciplinas = new System.Windows.Forms.ToolStripMenuItem();
             this.itemParticipantes = new System.Windows.Forms.ToolStripMenuItem();
             this.itemSalir = new System.Windows.Forms.ToolStripMenuItem();
+            this.itemUsuarios = new System.Windows.Forms.ToolStripMenuItem();
             this.menuInicio.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -42,6 +43,7 @@
             this.itemCategorias,
             this.itemDiciplinas,
             this.itemParticipantes,
+            this.itemUsuarios,
             this.itemSalir});
             this.menuInicio.Location = new System.Drawing.Point(0, 0);
             this.menuInicio.Name = "menuInicio";
@@ -77,6 +79,13 @@
             this.itemSalir.Text = "Salir";
             this.itemSalir.Click += new System.EventHandler(this.itemSalir_Click);
             // 
+            // itemUsuarios
+            // 
+            this.itemUsuarios.Name = "itemUsuarios";
+            this.itemUsuarios.Size = new System.Drawing.Size(64, 20);
+            this.itemUsuarios.Text = "Usuarios";
+            this.itemUsuarios.Click += new System.EventHandler(this.itemUsuarios_Click);
+            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -100,5 +109,6 @@
         private System.Windows.Forms.ToolStripMenuItem itemDiciplinas;
         private System.Windows.Forms.ToolStripMenuItem itemParticipantes;
         private System.Windows.Forms.ToolStripMenuItem itemSalir;
+        private System.Windows.Forms.ToolStripMenuItem itemUsuarios;
     }
 }

@@ -19,7 +19,7 @@ namespace Vistas
 
         private void FrmUsuario_Load(object sender, EventArgs e)
         {
-            
+            gridUsuarios_Load();
         }
 
         private void gridUsuarios_Load()

@@ -22,7 +22,7 @@ namespace ClasesBase
             cmd.CommandText += " U.ApellidoNombre as 'Apellido y Nombre', ";
             cmd.CommandText += " U.NombreUsuario as 'Usuario', ";
             cmd.CommandText += " U.Contrasenia as 'Contraseña', ";
-            cmd.CommandText += " U.ID as 'ID', R.Codigo as 'Codigo Rol', ";
+            cmd.CommandText += " U.ID as 'ID', R.Codigo as 'Codigo Rol' ";
             cmd.CommandText += " FROM Usuario as U ";
             cmd.CommandText += " LEFT JOIN Roles as R ON (R.Codigo=U.Rol_Codigo) ";
             cmd.CommandType = CommandType.Text;

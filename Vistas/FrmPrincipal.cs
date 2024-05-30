@@ -38,5 +38,11 @@ namespace Vistas
             FrmParticipante frmParticipante = new FrmParticipante();
             frmParticipante.Show();
         }
+
+        private void itemUsuarios_Click(object sender, EventArgs e)
+        {
+            FrmUsuario frmUsuario = new FrmUsuario();
+            frmUsuario.Show();
+        }
     }
 }
