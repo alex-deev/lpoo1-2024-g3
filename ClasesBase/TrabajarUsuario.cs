@@ -74,6 +74,21 @@ namespace ClasesBase
             cnn.Close();
         }
 
+        public static void EliminarUsuario(Usuario u)
+        {
+            SqlConnection cnn = new SqlConnection(cadenaConexion);
+
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "DELETE Usuario WHERE ID=@id";
+            cmd.Parameters.AddWithValue("@id", u.Usu_ID);
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = cnn;
+
+            cnn.Open();
+            cmd.ExecuteNonQuery();
+            cnn.Close();
+        }
+
         public static DataTable ListarRoles()
         {
             SqlConnection cnn = new SqlConnection(cadenaConexion);
