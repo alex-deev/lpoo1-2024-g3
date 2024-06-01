@@ -103,5 +103,40 @@ namespace ClasesBase
             da.Fill(dt);
             return dt;
         }
+
+        public static DataRow BuscarUsuarioBD(string nombreUsuario, string contrasenia)
+        {
+            SqlConnection cnn = new SqlConnection(cadenaConexion);
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "SELECT * FROM Usuario WHERE NombreUsuario=@usuario AND Contrasenia=@contrasenia";
+            cmd.Parameters.AddWithValue("@usuario", nombreUsuario);
+            cmd.Parameters.AddWithValue("@contrasenia", contrasenia);
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = cnn;
+
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+
+            if (dt.Select().Length == 1)
+            {
+                return dt.Select().First();
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        public static Usuario ConvertirUsuarioEncontrado(DataRow dr)
+        {
+            Usuario oUsuario = new Usuario();
+            oUsuario.Usu_ID = (int)dr["ID"];
+            oUsuario.Usu_NombreUsuario = (string)dr["NombreUsuario"];
+            oUsuario.Usu_Contraseña = (string)dr["Contrasenia"];
+            oUsuario.Usu_ApellidoNombre = (string)dr["ApellidoNombre"];
+            oUsuario.Rol_Codigo = (int)dr["Rol_Codigo"];
+            return oUsuario;
+        }
     }
 }
