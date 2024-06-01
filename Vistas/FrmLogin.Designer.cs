@@ -31,7 +31,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtNombreUsuario = new System.Windows.Forms.TextBox();
-            this.txtContraseña = new System.Windows.Forms.TextBox();
+            this.txtContrasenia = new System.Windows.Forms.TextBox();
             this.btnIngresar_Click = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -60,12 +60,12 @@
             this.txtNombreUsuario.Size = new System.Drawing.Size(100, 22);
             this.txtNombreUsuario.TabIndex = 2;
             // 
-            // txtContraseña
+            // txtContrasenia
             // 
-            this.txtContraseña.Location = new System.Drawing.Point(250, 194);
-            this.txtContraseña.Name = "txtContraseña";
-            this.txtContraseña.Size = new System.Drawing.Size(100, 22);
-            this.txtContraseña.TabIndex = 3;
+            this.txtContrasenia.Location = new System.Drawing.Point(250, 194);
+            this.txtContrasenia.Name = "txtContrasenia";
+            this.txtContrasenia.Size = new System.Drawing.Size(100, 22);
+            this.txtContrasenia.TabIndex = 3;
             // 
             // btnIngresar_Click
             // 
@@ -83,7 +83,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(597, 368);
             this.Controls.Add(this.btnIngresar_Click);
-            this.Controls.Add(this.txtContraseña);
+            this.Controls.Add(this.txtContrasenia);
             this.Controls.Add(this.txtNombreUsuario);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -99,7 +99,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtNombreUsuario;
-        private System.Windows.Forms.TextBox txtContraseña;
+        private System.Windows.Forms.TextBox txtContrasenia;
         private System.Windows.Forms.Button btnIngresar_Click;
     }
 }

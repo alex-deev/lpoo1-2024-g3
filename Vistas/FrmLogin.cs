@@ -12,47 +12,57 @@ namespace Vistas
 {
     public partial class FrmLogin : Form
     {
+        public bool AutenticacionRealizada { get; private set; }
+        public int CodigoRol { get; private set; }
+
         public FrmLogin()
         {
             InitializeComponent();
+            this.AutenticacionRealizada = false;
         }
 
         private void btnIngresar_Click_Click(object sender, EventArgs e)
         {
-            Boolean bUserFound = false;
-
-            Roles oRol1 = new Roles(1, "Administrador");
-            Roles oRol2 = new Roles(2, "Vendedor");
-            Roles oRol3 = new Roles(3, "Operador");
-
-            Usuario oUsuario1 = new Usuario(1, "MartinF", "123", "Martin Flores", 1);
-            Usuario oUsuario2 = new Usuario(2, "JuanC", "456", "Juan Cardozo", 2);
-            Usuario oUsuario3 = new Usuario(3, "CarlosG", "789", "Carlos Gerez", 3);
-
-            FrmPrincipal oFormPrincipal = new FrmPrincipal();
-
-            if (oUsuario1.Usu_NombreUsuario == txtNombreUsuario.Text && oUsuario1.Usu_Contraseña == txtContraseña.Text)
+            if (ValidarUsuario() && ValidarContrasenia())
             {
-                bUserFound = true;
-            }
-            else if (oUsuario2.Usu_NombreUsuario == txtNombreUsuario.Text && oUsuario2.Usu_Contraseña == txtContraseña.Text)
-            {
-                bUserFound = true;
-            }
-            else if (oUsuario3.Usu_NombreUsuario == txtNombreUsuario.Text && oUsuario3.Usu_Contraseña == txtContraseña.Text)
-            {
-                bUserFound = true;
-            }
-
-
-            if (bUserFound)
-            {
-                MessageBox.Show("Bienvenido/a: " + txtNombreUsuario.Text);
-                oFormPrincipal.Show();
+                DataRow dr = TrabajarUsuario.BuscarUsuarioBD(txtNombreUsuario.Text, txtContrasenia.Text);
+                if (dr != null)
+                {
+                    Usuario usuarioEncontrado = TrabajarUsuario.ConvertirUsuarioEncontrado(dr);
+                    MessageBox.Show("Bienvenido " + usuarioEncontrado.Usu_ApellidoNombre);
+                    this.AutenticacionRealizada = true;
+                    this.CodigoRol = usuarioEncontrado.Rol_Codigo;
+                    this.Close();
+                }
             }
             else
             {
-                MessageBox.Show("Los datos son incorrectos, intente nuevamente");
+                MessageBox.Show("Ambos campos (Usuario y Contraseña) deben ser completados");
+            }
+        }
+
+
+        private bool ValidarUsuario()
+        {
+            if (string.IsNullOrEmpty(txtNombreUsuario.Text))
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        private bool ValidarContrasenia()
+        {
+            if (string.IsNullOrEmpty(txtContrasenia.Text))
+            {
+                return false;
+            }
+            else
+            {
+                return true;
             }
         }
     }
