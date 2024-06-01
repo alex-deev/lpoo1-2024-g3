@@ -15,7 +15,15 @@ namespace Vistas
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmLogin());
+            FrmLogin frmLogin = new FrmLogin();
+            Application.Run(frmLogin);
+
+            if (frmLogin.AutenticacionRealizada == true)
+            {
+                FrmPrincipal frmPrincipal = new FrmPrincipal();
+                frmPrincipal.CodigoRol = frmLogin.CodigoRol;
+                Application.Run(frmPrincipal);
+            }
         }
     }
 }
