@@ -11,9 +11,45 @@ namespace Vistas
 {
     public partial class FrmPrincipal : Form
     {
+        public int CodigoRol { get; set; }
+
         public FrmPrincipal()
         {
             InitializeComponent();
+        }
+
+        private void FrmPrincipal_Load(object sender, EventArgs e)
+        {
+            AdministrarAcceso();
+        }
+
+        private void AdministrarAcceso() 
+        {
+            itemCategorias.Enabled = false;
+            itemDiciplinas.Enabled = false;
+            itemParticipantes.Enabled = false;
+            itemUsuarios.Enabled = false;
+            itemCompetencias.Enabled = false;
+
+            switch (CodigoRol)
+            { 
+                case 1: //Administrador
+                    itemUsuarios.Enabled = true;
+                    break;
+                case 2: //Operador
+                    itemParticipantes.Enabled = true;
+                    itemCompetencias.Enabled = true;
+                    break;
+                case 3: //Auditor
+                    itemCategorias.Enabled = true;
+                    itemDiciplinas.Enabled = true;
+                    itemParticipantes.Enabled = true;
+                    itemUsuarios.Enabled = true;
+                    itemCompetencias.Enabled = true;
+                    break;
+                default:
+                    break;
+            }
         }
 
         private void itemSalir_Click(object sender, EventArgs e)
@@ -48,5 +84,11 @@ namespace Vistas
             FrmUsuario frmUsuario = new FrmUsuario();
             frmUsuario.Show();
         }
+
+        private void competenciaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }
