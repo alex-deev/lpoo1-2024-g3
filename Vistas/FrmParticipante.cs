@@ -16,7 +16,33 @@ namespace Vistas
         {
             InitializeComponent();
         }
+        private void FrmParticipante_Load(object sender, EventArgs e)
+        {
+            cargarParticipantes();
+        }
+        private void cargarParticipantes()
+        {
+            gridParticipantes.DataSource = TrabajarParticipante.ListarParticipantes();
+        }
 
+        private void gridParticipantes_CurrentCellChanged(object sender, EventArgs e)
+        {
+            if(gridParticipantes.CurrentCell != null)
+            {
+                txtDNI.Text = gridParticipantes.CurrentRow.Cells["DNI"].ToString();
+                txtApellido.Text = gridParticipantes.CurrentRow.Cells["Apellido"].ToString();
+                txtNombre.Text = gridParticipantes.CurrentRow.Cells["Nombre"].ToString();
+                txtNacionalidad.Text = gridParticipantes.CurrentRow.Cells["Nacionalidad"].ToString();
+                txtEntrenador.Text = gridParticipantes.CurrentRow.Cells["Entrenador"].ToString();
+                txtGenero.Text = gridParticipantes.CurrentRow.Cells["Genero"].ToString();
+                //numAltura.Value = gridParticipantes.CurrentRow.Cells["Altura"].ToString();
+                //numPeso.Value = gridParticipantes.CurrentRow.Cells["Peso"].ToString();
+                //dateFechaNac.Value = gridParticipantes.CurrentRow.Cells["Fecha Nac"].ToString();
+                txtDireccion.Text = gridParticipantes.CurrentRow.Cells["Direccion"].ToString();
+                txtEmail.Text = gridParticipantes.CurrentRow.Cells["Email"].ToString();
+                
+            }
+        }
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             Atleta oAtl = CargarAtleta();

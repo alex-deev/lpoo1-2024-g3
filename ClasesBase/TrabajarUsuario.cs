@@ -29,7 +29,7 @@ namespace ClasesBase
             cmd.Connection = cnn;
 
             SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable();
+            DataTable dt = new DataTable();-
             da.Fill(dt);
             return dt;
         }

@@ -51,12 +51,12 @@
             this.lblFechaNac = new System.Windows.Forms.Label();
             this.lblDireccion = new System.Windows.Forms.Label();
             this.lblEmail = new System.Windows.Forms.Label();
-            this.dataParticipantes = new System.Windows.Forms.DataGridView();
+            this.gridParticipantes = new System.Windows.Forms.DataGridView();
             this.bntEliminar = new System.Windows.Forms.Button();
             this.bntModificar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numAltura)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numPeso)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataParticipantes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridParticipantes)).BeginInit();
             this.SuspendLayout();
             // 
             // lblDNI
@@ -116,6 +116,7 @@
             this.numAltura.Name = "numAltura";
             this.numAltura.Size = new System.Drawing.Size(120, 20);
             this.numAltura.TabIndex = 7;
+            this.numAltura.ValueChanged += new System.EventHandler(this.numAltura_ValueChanged);
             // 
             // numPeso
             // 
@@ -246,13 +247,13 @@
             this.lblEmail.TabIndex = 22;
             this.lblEmail.Text = "Email";
             // 
-            // dataParticipantes
+            // gridParticipantes
             // 
-            this.dataParticipantes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataParticipantes.Location = new System.Drawing.Point(382, 13);
-            this.dataParticipantes.Name = "dataParticipantes";
-            this.dataParticipantes.Size = new System.Drawing.Size(435, 316);
-            this.dataParticipantes.TabIndex = 23;
+            this.gridParticipantes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridParticipantes.Location = new System.Drawing.Point(382, 13);
+            this.gridParticipantes.Name = "gridParticipantes";
+            this.gridParticipantes.Size = new System.Drawing.Size(435, 316);
+            this.gridParticipantes.TabIndex = 23;
             // 
             // bntEliminar
             // 
@@ -279,7 +280,7 @@
             this.ClientSize = new System.Drawing.Size(838, 498);
             this.Controls.Add(this.bntModificar);
             this.Controls.Add(this.bntEliminar);
-            this.Controls.Add(this.dataParticipantes);
+            this.Controls.Add(this.gridParticipantes);
             this.Controls.Add(this.lblEmail);
             this.Controls.Add(this.lblDireccion);
             this.Controls.Add(this.lblFechaNac);
@@ -305,9 +306,10 @@
             this.Controls.Add(this.lblDNI);
             this.Name = "FrmParticipante";
             this.Text = "FrmParticipante";
+            this.Load += new System.EventHandler(this.FrmParticipante_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numAltura)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numPeso)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataParticipantes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridParticipantes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -338,7 +340,7 @@
         private System.Windows.Forms.Label lblFechaNac;
         private System.Windows.Forms.Label lblDireccion;
         private System.Windows.Forms.Label lblEmail;
-        private System.Windows.Forms.DataGridView dataParticipantes;
+        private System.Windows.Forms.DataGridView gridParticipantes;
         private System.Windows.Forms.Button bntEliminar;
         private System.Windows.Forms.Button bntModificar;
     }
