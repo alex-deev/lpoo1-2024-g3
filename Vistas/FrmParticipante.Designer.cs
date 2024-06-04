@@ -51,8 +51,12 @@
             this.lblFechaNac = new System.Windows.Forms.Label();
             this.lblDireccion = new System.Windows.Forms.Label();
             this.lblEmail = new System.Windows.Forms.Label();
+            this.dataParticipantes = new System.Windows.Forms.DataGridView();
+            this.bntEliminar = new System.Windows.Forms.Button();
+            this.bntModificar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numAltura)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numPeso)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataParticipantes)).BeginInit();
             this.SuspendLayout();
             // 
             // lblDNI
@@ -144,7 +148,7 @@
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(197, 306);
+            this.btnGuardar.Location = new System.Drawing.Point(234, 367);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 23);
             this.btnGuardar.TabIndex = 12;
@@ -242,11 +246,40 @@
             this.lblEmail.TabIndex = 22;
             this.lblEmail.Text = "Email";
             // 
+            // dataParticipantes
+            // 
+            this.dataParticipantes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataParticipantes.Location = new System.Drawing.Point(382, 13);
+            this.dataParticipantes.Name = "dataParticipantes";
+            this.dataParticipantes.Size = new System.Drawing.Size(435, 316);
+            this.dataParticipantes.TabIndex = 23;
+            // 
+            // bntEliminar
+            // 
+            this.bntEliminar.Location = new System.Drawing.Point(16, 367);
+            this.bntEliminar.Name = "bntEliminar";
+            this.bntEliminar.Size = new System.Drawing.Size(75, 23);
+            this.bntEliminar.TabIndex = 24;
+            this.bntEliminar.Text = "Eliminar";
+            this.bntEliminar.UseVisualStyleBackColor = true;
+            // 
+            // bntModificar
+            // 
+            this.bntModificar.Location = new System.Drawing.Point(127, 367);
+            this.bntModificar.Name = "bntModificar";
+            this.bntModificar.Size = new System.Drawing.Size(75, 23);
+            this.bntModificar.TabIndex = 25;
+            this.bntModificar.Text = "Modificar";
+            this.bntModificar.UseVisualStyleBackColor = true;
+            // 
             // FrmParticipante
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 341);
+            this.ClientSize = new System.Drawing.Size(838, 498);
+            this.Controls.Add(this.bntModificar);
+            this.Controls.Add(this.bntEliminar);
+            this.Controls.Add(this.dataParticipantes);
             this.Controls.Add(this.lblEmail);
             this.Controls.Add(this.lblDireccion);
             this.Controls.Add(this.lblFechaNac);
@@ -274,6 +307,7 @@
             this.Text = "FrmParticipante";
             ((System.ComponentModel.ISupportInitialize)(this.numAltura)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numPeso)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataParticipantes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -304,5 +338,8 @@
         private System.Windows.Forms.Label lblFechaNac;
         private System.Windows.Forms.Label lblDireccion;
         private System.Windows.Forms.Label lblEmail;
+        private System.Windows.Forms.DataGridView dataParticipantes;
+        private System.Windows.Forms.Button bntEliminar;
+        private System.Windows.Forms.Button bntModificar;
     }
 }
