@@ -15,21 +15,22 @@ namespace ClasesBase
         //LISTAR PARTICIPANTES
         public static DataTable ListarParticipantes()
         {
-            SqlConnection cnn = new SqlConnection();
+            SqlConnection cnn = new SqlConnection(cadenaConexion);
 
             SqlCommand cmd = new SqlCommand();
             cmd.CommandText = "SELECT " +
-                              "Atl_DNI as 'DNI,' " +
-                              "Atl_Apellido as 'Apellido', " +
-                              "Atl_Nombre as 'Nombre', " +
-                              "Atl_Nacionalidad as 'Nacionalidad', " +
-                              "Atl_Entrenador as 'Entrenador', " +
-                              "Atl_Genero as 'Genero', " +
-                              "Atl_Altura as 'Altura', " +
-                              "Atl_Peso as 'Peso', " +
-                              "Atl_FechaNac as 'Fecha Nac', " +
-                              "Atl_Direccion as 'Direccion', " +
-                              "Atl_Email as 'Email' " +
+                              "ID as 'Id', " +
+                              "DNI as 'DNI', " +
+                              "Apellido as 'Apellido', " +
+                              "Nombre as 'Nombre', " +
+                              "Nacionalidad as 'Nacionalidad', " +
+                              "Entrenador as 'Entrenador', " +
+                              "Genero as 'Genero', " +
+                              "Altura as 'Altura', " +
+                              "Peso as 'Peso', " +
+                              "FechaNac as 'Fecha Nac', " +
+                              "Direccion as 'Direccion', " +
+                              "Email as 'Email' " +
                               "FROM Atleta";
 
             cmd.CommandType = CommandType.Text;
@@ -46,7 +47,7 @@ namespace ClasesBase
         {
             SqlConnection cnn = new SqlConnection(cadenaConexion);
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "INSERT INTO Atleta(atl_dni, atl_apellido, atl_nombre, atl_nacionalidad, atl_entrenador, atl_genero, atl_altura, atl_peso, atl_fechaNac, atl_direccion, atl_email) " +
+            cmd.CommandText = "INSERT INTO Atleta(DNI, Apellido, Nombre, Nacionalidad, Entrenador, Genero, Altura, Peso, FechaNac, Direccion, Email) " +
                               "VALUES (@dni, @apellido, @nombre, @nacionalidad, @entrenador, @genero, @altura, @peso, @fechaNac, @direccion, @email)";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = cnn;
@@ -74,11 +75,12 @@ namespace ClasesBase
             SqlConnection cnn = new SqlConnection(cadenaConexion);
             SqlCommand cmd = new SqlCommand();
 
-            cmd.CommandText = "DELETE FROM Atleta WHERE atl_id = @id";
+            cmd.CommandText = "DELETE FROM Atleta WHERE ID = @id";
+            cmd.Parameters.AddWithValue("@id", atleta.Atl_ID);
             cmd.CommandType = CommandType.Text;
             cmd.Connection = cnn;
 
-            cmd.Parameters.AddWithValue("@id", atleta.Atl_ID);
+            
 
             cnn.Open();
             cmd.ExecuteNonQuery();
@@ -92,18 +94,18 @@ namespace ClasesBase
             SqlCommand cmd = new SqlCommand();
 
             cmd.CommandText = "UPDATE Atleta SET " +
-                                 "atl_dni = @dni, " +
-                                 "atl_apellido = @apellido, " +
-                                 "atl_nombre = @nombre, " +
-                                 "atl_nacionalidad = @nacionalidad, " +
-                                 "atl_entrenador = @entrenador, " +
-                                 "atl_genero = @genero, " +
-                                 "atl_altura = @altura, " +
-                                 "atl_peso = @peso, " +
-                                 "atl_fechaNac = @fechaNac, " +
-                                 "atl_direccion = @direccion, " +
-                                 "atl_email = @email " +
-                                 "WHERE atl_id = @id";
+                                 "DNI = @dni, " +
+                                 "Apellido = @apellido, " +
+                                 "Nombre = @nombre, " +
+                                 "Nacionalidad = @nacionalidad, " +
+                                 "Entrenador = @entrenador, " +
+                                 "Genero = @genero, " +
+                                 "Altura = @altura, " +
+                                 "Peso = @peso, " +
+                                 "FechaNac = @fechaNac, " +
+                                 "Direccion = @direccion, " +
+                                 "Email = @email " +
+                                 "WHERE ID = @id";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = cnn;
 
@@ -123,6 +125,25 @@ namespace ClasesBase
             cnn.Open();
             cmd.ExecuteNonQuery();
             cnn.Close();
+        }
+
+        //METODO BOOL PARA VERIFICAR SI YA EXISTE UN PARTICIPANTE CON EL MISMO DNI
+        public static bool verificarAtletaRepetido(string dni)
+        {
+            SqlConnection cnn = new SqlConnection(cadenaConexion);
+
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "SELECT COUNT(*) FROM Atleta WHERE DNI = @dni";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = cnn;
+
+            cmd.Parameters.AddWithValue("@dni", dni);
+
+            cnn.Open();
+            int count = (int)cmd.ExecuteScalar();
+            cnn.Close();
+
+            return count > 0;
         }
 
     }

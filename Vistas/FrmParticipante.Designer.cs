@@ -34,7 +34,6 @@
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtNacionalidad = new System.Windows.Forms.TextBox();
             this.txtEntrenador = new System.Windows.Forms.TextBox();
-            this.txtGenero = new System.Windows.Forms.TextBox();
             this.numAltura = new System.Windows.Forms.NumericUpDown();
             this.numPeso = new System.Windows.Forms.NumericUpDown();
             this.dateFechaNac = new System.Windows.Forms.DateTimePicker();
@@ -54,6 +53,8 @@
             this.gridParticipantes = new System.Windows.Forms.DataGridView();
             this.bntEliminar = new System.Windows.Forms.Button();
             this.bntModificar = new System.Windows.Forms.Button();
+            this.cmbGenero = new System.Windows.Forms.ComboBox();
+            this.btnLimpiar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numAltura)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numPeso)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridParticipantes)).BeginInit();
@@ -103,20 +104,12 @@
             this.txtEntrenador.Size = new System.Drawing.Size(120, 20);
             this.txtEntrenador.TabIndex = 5;
             // 
-            // txtGenero
-            // 
-            this.txtGenero.Location = new System.Drawing.Point(152, 140);
-            this.txtGenero.Name = "txtGenero";
-            this.txtGenero.Size = new System.Drawing.Size(120, 20);
-            this.txtGenero.TabIndex = 6;
-            // 
             // numAltura
             // 
             this.numAltura.Location = new System.Drawing.Point(152, 166);
             this.numAltura.Name = "numAltura";
             this.numAltura.Size = new System.Drawing.Size(120, 20);
             this.numAltura.TabIndex = 7;
-            this.numAltura.ValueChanged += new System.EventHandler(this.numAltura_ValueChanged);
             // 
             // numPeso
             // 
@@ -249,11 +242,13 @@
             // 
             // gridParticipantes
             // 
+            this.gridParticipantes.AllowUserToAddRows = false;
             this.gridParticipantes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridParticipantes.Location = new System.Drawing.Point(382, 13);
             this.gridParticipantes.Name = "gridParticipantes";
             this.gridParticipantes.Size = new System.Drawing.Size(435, 316);
             this.gridParticipantes.TabIndex = 23;
+            this.gridParticipantes.CurrentCellChanged += new System.EventHandler(this.gridParticipantes_CurrentCellChanged);
             // 
             // bntEliminar
             // 
@@ -263,6 +258,7 @@
             this.bntEliminar.TabIndex = 24;
             this.bntEliminar.Text = "Eliminar";
             this.bntEliminar.UseVisualStyleBackColor = true;
+            this.bntEliminar.Click += new System.EventHandler(this.bntEliminar_Click);
             // 
             // bntModificar
             // 
@@ -272,12 +268,33 @@
             this.bntModificar.TabIndex = 25;
             this.bntModificar.Text = "Modificar";
             this.bntModificar.UseVisualStyleBackColor = true;
+            this.bntModificar.Click += new System.EventHandler(this.bntModificar_Click);
+            // 
+            // cmbGenero
+            // 
+            this.cmbGenero.FormattingEnabled = true;
+            this.cmbGenero.Location = new System.Drawing.Point(151, 140);
+            this.cmbGenero.Name = "cmbGenero";
+            this.cmbGenero.Size = new System.Drawing.Size(121, 21);
+            this.cmbGenero.TabIndex = 26;
+            // 
+            // btnLimpiar
+            // 
+            this.btnLimpiar.Location = new System.Drawing.Point(342, 367);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(75, 23);
+            this.btnLimpiar.TabIndex = 27;
+            this.btnLimpiar.Text = "Limpiar Datos";
+            this.btnLimpiar.UseVisualStyleBackColor = true;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // FrmParticipante
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(838, 498);
+            this.Controls.Add(this.btnLimpiar);
+            this.Controls.Add(this.cmbGenero);
             this.Controls.Add(this.bntModificar);
             this.Controls.Add(this.bntEliminar);
             this.Controls.Add(this.gridParticipantes);
@@ -297,7 +314,6 @@
             this.Controls.Add(this.dateFechaNac);
             this.Controls.Add(this.numPeso);
             this.Controls.Add(this.numAltura);
-            this.Controls.Add(this.txtGenero);
             this.Controls.Add(this.txtEntrenador);
             this.Controls.Add(this.txtNacionalidad);
             this.Controls.Add(this.txtNombre);
@@ -323,7 +339,6 @@
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.TextBox txtNacionalidad;
         private System.Windows.Forms.TextBox txtEntrenador;
-        private System.Windows.Forms.TextBox txtGenero;
         private System.Windows.Forms.NumericUpDown numAltura;
         private System.Windows.Forms.NumericUpDown numPeso;
         private System.Windows.Forms.DateTimePicker dateFechaNac;
@@ -343,5 +358,7 @@
         private System.Windows.Forms.DataGridView gridParticipantes;
         private System.Windows.Forms.Button bntEliminar;
         private System.Windows.Forms.Button bntModificar;
+        private System.Windows.Forms.ComboBox cmbGenero;
+        private System.Windows.Forms.Button btnLimpiar;
     }
 }
