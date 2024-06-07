@@ -128,7 +128,7 @@ namespace ClasesBase
             }
         }
 
-        public static Usuario ConvertirUsuarioEncontrado(DataRow dr)
+        public static Usuario ConvertirUsuario(DataRow dr)
         {
             Usuario oUsuario = new Usuario();
             oUsuario.Usu_ID = (int)dr["ID"];

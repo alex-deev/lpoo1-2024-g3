@@ -28,7 +28,7 @@ namespace Vistas
                 DataRow dr = TrabajarUsuario.BuscarUsuarioBD(txtNombreUsuario.Text, txtContrasenia.Text);
                 if (dr != null)
                 {
-                    Usuario usuarioEncontrado = TrabajarUsuario.ConvertirUsuarioEncontrado(dr);
+                    Usuario usuarioEncontrado = TrabajarUsuario.ConvertirUsuario(dr);
                     MessageBox.Show("Bienvenido " + usuarioEncontrado.Usu_ApellidoNombre);
                     this.AutenticacionRealizada = true;
                     this.CodigoRol = usuarioEncontrado.Rol_Codigo;
