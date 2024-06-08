@@ -17,6 +17,16 @@ namespace Vistas
             InitializeComponent();
         }
 
+        private void FrmDisciplina_Load(object sender, EventArgs e)
+        {
+            Cargar_GridDisciplina();
+        }
+
+        private void Cargar_GridDisciplina() 
+        {
+            gridDisciplina.DataSource = TrabajarDisciplina.ListarDisciplinas();
+        }
+
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             Disciplina oDis = CargarDisciplina();
@@ -32,5 +42,9 @@ namespace Vistas
             oDis.Dis_Descripcion = txtDescripcion.Text;
             return oDis;
         }
+
+
+
+
     }
 }

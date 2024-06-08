@@ -33,63 +33,86 @@
             this.lblDescripcion = new System.Windows.Forms.Label();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.btnGuardar = new System.Windows.Forms.Button();
+            this.gridDisciplina = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.gridDisciplina)).BeginInit();
             this.SuspendLayout();
             // 
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(13, 13);
+            this.lblNombre.Location = new System.Drawing.Point(544, 40);
+            this.lblNombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(44, 13);
+            this.lblNombre.Size = new System.Drawing.Size(58, 17);
             this.lblNombre.TabIndex = 0;
             this.lblNombre.Text = "Nombre";
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(12, 29);
+            this.txtNombre.Location = new System.Drawing.Point(547, 75);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(4);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(260, 20);
+            this.txtNombre.Size = new System.Drawing.Size(345, 22);
             this.txtNombre.TabIndex = 1;
             // 
             // lblDescripcion
             // 
             this.lblDescripcion.AutoSize = true;
-            this.lblDescripcion.Location = new System.Drawing.Point(13, 57);
+            this.lblDescripcion.Location = new System.Drawing.Point(544, 131);
+            this.lblDescripcion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDescripcion.Name = "lblDescripcion";
-            this.lblDescripcion.Size = new System.Drawing.Size(63, 13);
+            this.lblDescripcion.Size = new System.Drawing.Size(82, 17);
             this.lblDescripcion.TabIndex = 2;
             this.lblDescripcion.Text = "Descripción";
             // 
             // txtDescripcion
             // 
-            this.txtDescripcion.Location = new System.Drawing.Point(12, 73);
+            this.txtDescripcion.Location = new System.Drawing.Point(547, 172);
+            this.txtDescripcion.Margin = new System.Windows.Forms.Padding(4);
             this.txtDescripcion.Multiline = true;
             this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(260, 40);
+            this.txtDescripcion.Size = new System.Drawing.Size(345, 48);
             this.txtDescripcion.TabIndex = 3;
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(196, 226);
+            this.btnGuardar.Location = new System.Drawing.Point(828, 299);
+            this.btnGuardar.Margin = new System.Windows.Forms.Padding(4);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(75, 23);
+            this.btnGuardar.Size = new System.Drawing.Size(100, 28);
             this.btnGuardar.TabIndex = 4;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
+            // gridDisciplina
+            // 
+            this.gridDisciplina.AllowUserToAddRows = false;
+            this.gridDisciplina.AllowUserToDeleteRows = false;
+            this.gridDisciplina.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridDisciplina.Location = new System.Drawing.Point(12, 40);
+            this.gridDisciplina.Name = "gridDisciplina";
+            this.gridDisciplina.ReadOnly = true;
+            this.gridDisciplina.RowTemplate.Height = 24;
+            this.gridDisciplina.Size = new System.Drawing.Size(507, 350);
+            this.gridDisciplina.TabIndex = 5;
+            // 
             // FrmDisciplina
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.ClientSize = new System.Drawing.Size(941, 419);
+            this.Controls.Add(this.gridDisciplina);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.txtDescripcion);
             this.Controls.Add(this.lblDescripcion);
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.lblNombre);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmDisciplina";
             this.Text = "FrmDisciplina";
+            this.Load += new System.EventHandler(this.FrmDisciplina_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.gridDisciplina)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -102,6 +125,7 @@
         private System.Windows.Forms.Label lblDescripcion;
         private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.DataGridView gridDisciplina;
 
     }
 }
