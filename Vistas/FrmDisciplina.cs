@@ -27,13 +27,49 @@ namespace Vistas
             gridDisciplina.DataSource = TrabajarDisciplina.ListarDisciplinas();
         }
 
+        private void gridDisciplina_CurrentCellChanged(object sender, EventArgs e)
+        {
+            if (gridDisciplina.CurrentRow != null) 
+            {
+                txtNombre.Text = gridDisciplina.CurrentRow.Cells["Nombre"].Value.ToString();
+                txtDescripcion.Text = gridDisciplina.CurrentRow.Cells["Descripcion"].Value.ToString();
+            }
+        }
+
+        private Disciplina ExtraerDisciplina() 
+        {
+            Disciplina oDisciplina = new Disciplina();
+            oDisciplina.Dis_ID = (int)gridDisciplina.CurrentRow.Cells["ID"].Value;
+            oDisciplina.Dis_Nombre = txtNombre.Text;
+            oDisciplina.Dis_Descripcion = txtDescripcion.Text;
+
+            return oDisciplina;
+        }
+
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            Disciplina oDis = CargarDisciplina();
-            string mensaje = "Nombre: " + oDis.Dis_Nombre;
-            mensaje += "\nDescripción: " + oDis.Dis_Descripcion;
-            MessageBox.Show(mensaje);
+            TrabajarDisciplina.InsertarDisciplina(ExtraerDisciplina());
+            Cargar_GridDisciplina();
         }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            txtNombre.Text = null;
+            txtDescripcion.Text = null;
+
+            btnGuardar.Enabled = true;
+            btnActualizar.Enabled = false;
+            btnEliminar.Enabled = false;
+        }
+
+
+
+
+
+
+
+
+
 
         private Disciplina CargarDisciplina()
         {
@@ -42,6 +78,7 @@ namespace Vistas
             oDis.Dis_Descripcion = txtDescripcion.Text;
             return oDis;
         }
+
 
 
 

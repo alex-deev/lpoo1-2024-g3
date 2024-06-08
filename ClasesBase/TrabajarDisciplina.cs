@@ -29,5 +29,22 @@ namespace ClasesBase
             da.Fill(dt);
             return dt;
         }
+
+        public static void InsertarDisciplina(Disciplina oDisciplina) 
+        {
+            SqlConnection cnn = new SqlConnection(cadenaConexion);
+
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "INSERT INTO Disciplina (Nombre, Descripcion) ";
+            cmd.CommandText += " VALUES (@nombre, @descripcion) ";
+            cmd.Parameters.AddWithValue("@nombre", oDisciplina.Dis_Nombre);
+            cmd.Parameters.AddWithValue("@descripcion", oDisciplina.Dis_Descripcion);
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = cnn;
+
+            cnn.Open();
+            cmd.ExecuteNonQuery();
+            cnn.Close();
+        }
     }
 }

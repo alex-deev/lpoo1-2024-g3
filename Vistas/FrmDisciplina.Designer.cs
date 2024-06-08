@@ -34,13 +34,18 @@
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.gridDisciplina = new System.Windows.Forms.DataGridView();
+            this.btnNuevo = new System.Windows.Forms.Button();
+            this.btnActualizar = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.gridDisciplina)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(544, 40);
+            this.lblNombre.Location = new System.Drawing.Point(4, 63);
             this.lblNombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(58, 17);
@@ -49,7 +54,7 @@
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(547, 75);
+            this.txtNombre.Location = new System.Drawing.Point(5, 99);
             this.txtNombre.Margin = new System.Windows.Forms.Padding(4);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(345, 22);
@@ -58,7 +63,7 @@
             // lblDescripcion
             // 
             this.lblDescripcion.AutoSize = true;
-            this.lblDescripcion.Location = new System.Drawing.Point(544, 131);
+            this.lblDescripcion.Location = new System.Drawing.Point(7, 154);
             this.lblDescripcion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDescripcion.Name = "lblDescripcion";
             this.lblDescripcion.Size = new System.Drawing.Size(82, 17);
@@ -67,7 +72,7 @@
             // 
             // txtDescripcion
             // 
-            this.txtDescripcion.Location = new System.Drawing.Point(547, 172);
+            this.txtDescripcion.Location = new System.Drawing.Point(7, 192);
             this.txtDescripcion.Margin = new System.Windows.Forms.Padding(4);
             this.txtDescripcion.Multiline = true;
             this.txtDescripcion.Name = "txtDescripcion";
@@ -76,7 +81,7 @@
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(828, 299);
+            this.btnGuardar.Location = new System.Drawing.Point(232, 334);
             this.btnGuardar.Margin = new System.Windows.Forms.Padding(4);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(100, 28);
@@ -90,31 +95,74 @@
             this.gridDisciplina.AllowUserToAddRows = false;
             this.gridDisciplina.AllowUserToDeleteRows = false;
             this.gridDisciplina.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridDisciplina.Location = new System.Drawing.Point(12, 40);
+            this.gridDisciplina.Location = new System.Drawing.Point(12, 12);
             this.gridDisciplina.Name = "gridDisciplina";
             this.gridDisciplina.ReadOnly = true;
             this.gridDisciplina.RowTemplate.Height = 24;
-            this.gridDisciplina.Size = new System.Drawing.Size(507, 350);
+            this.gridDisciplina.Size = new System.Drawing.Size(346, 287);
             this.gridDisciplina.TabIndex = 5;
+            this.gridDisciplina.CurrentCellChanged += new System.EventHandler(this.gridDisciplina_CurrentCellChanged);
+            // 
+            // btnNuevo
+            // 
+            this.btnNuevo.Location = new System.Drawing.Point(103, 334);
+            this.btnNuevo.Name = "btnNuevo";
+            this.btnNuevo.Size = new System.Drawing.Size(100, 28);
+            this.btnNuevo.TabIndex = 6;
+            this.btnNuevo.Text = "Nuevo";
+            this.btnNuevo.UseVisualStyleBackColor = true;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
+            // 
+            // btnActualizar
+            // 
+            this.btnActualizar.Location = new System.Drawing.Point(584, 334);
+            this.btnActualizar.Name = "btnActualizar";
+            this.btnActualizar.Size = new System.Drawing.Size(100, 28);
+            this.btnActualizar.TabIndex = 7;
+            this.btnActualizar.Text = "Actualizar";
+            this.btnActualizar.UseVisualStyleBackColor = true;
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Location = new System.Drawing.Point(428, 334);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(100, 28);
+            this.btnEliminar.TabIndex = 8;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.txtNombre);
+            this.groupBox1.Controls.Add(this.lblNombre);
+            this.groupBox1.Controls.Add(this.lblDescripcion);
+            this.groupBox1.Controls.Add(this.txtDescripcion);
+            this.groupBox1.Location = new System.Drawing.Point(382, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(357, 287);
+            this.groupBox1.TabIndex = 9;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Disciplina";
             // 
             // FrmDisciplina
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(941, 419);
+            this.ClientSize = new System.Drawing.Size(776, 372);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.btnEliminar);
+            this.Controls.Add(this.btnActualizar);
+            this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.gridDisciplina);
             this.Controls.Add(this.btnGuardar);
-            this.Controls.Add(this.txtDescripcion);
-            this.Controls.Add(this.lblDescripcion);
-            this.Controls.Add(this.txtNombre);
-            this.Controls.Add(this.lblNombre);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmDisciplina";
             this.Text = "FrmDisciplina";
             this.Load += new System.EventHandler(this.FrmDisciplina_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridDisciplina)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -126,6 +174,10 @@
         private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.DataGridView gridDisciplina;
+        private System.Windows.Forms.Button btnNuevo;
+        private System.Windows.Forms.Button btnActualizar;
+        private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.GroupBox groupBox1;
 
     }
 }
