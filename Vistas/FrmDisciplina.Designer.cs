@@ -99,7 +99,7 @@
             this.gridDisciplina.Name = "gridDisciplina";
             this.gridDisciplina.ReadOnly = true;
             this.gridDisciplina.RowTemplate.Height = 24;
-            this.gridDisciplina.Size = new System.Drawing.Size(346, 287);
+            this.gridDisciplina.Size = new System.Drawing.Size(414, 287);
             this.gridDisciplina.TabIndex = 5;
             this.gridDisciplina.CurrentCellChanged += new System.EventHandler(this.gridDisciplina_CurrentCellChanged);
             // 
@@ -115,21 +115,23 @@
             // 
             // btnActualizar
             // 
-            this.btnActualizar.Location = new System.Drawing.Point(584, 334);
+            this.btnActualizar.Location = new System.Drawing.Point(665, 334);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(100, 28);
             this.btnActualizar.TabIndex = 7;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = true;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(428, 334);
+            this.btnEliminar.Location = new System.Drawing.Point(509, 334);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(100, 28);
             this.btnEliminar.TabIndex = 8;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // groupBox1
             // 
@@ -137,7 +139,7 @@
             this.groupBox1.Controls.Add(this.lblNombre);
             this.groupBox1.Controls.Add(this.lblDescripcion);
             this.groupBox1.Controls.Add(this.txtDescripcion);
-            this.groupBox1.Location = new System.Drawing.Point(382, 12);
+            this.groupBox1.Location = new System.Drawing.Point(463, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(357, 287);
             this.groupBox1.TabIndex = 9;
@@ -148,7 +150,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(776, 372);
+            this.ClientSize = new System.Drawing.Size(856, 372);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnActualizar);

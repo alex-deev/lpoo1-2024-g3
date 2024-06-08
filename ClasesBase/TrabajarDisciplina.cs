@@ -19,7 +19,8 @@ namespace ClasesBase
             SqlCommand cmd = new SqlCommand();
             cmd.CommandText = "SELECT ";
             cmd.CommandText += " Nombre, ";
-            cmd.CommandText += " Descripcion ";
+            cmd.CommandText += " Descripcion, ";
+            cmd.CommandText += " ID ";
             cmd.CommandText += " FROM Disciplina ";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = cnn;
@@ -46,5 +47,39 @@ namespace ClasesBase
             cmd.ExecuteNonQuery();
             cnn.Close();
         }
+
+        public static void ActualizarDisciplina(Disciplina oDisciplina)
+        {
+            SqlConnection cnn = new SqlConnection(cadenaConexion);
+
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "UPDATE Disciplina SET Nombre=@nombre, Descripcion=@descripcion ";
+            cmd.CommandText += " WHERE ID=@id";
+            cmd.Parameters.AddWithValue("@id", oDisciplina.Dis_ID);
+            cmd.Parameters.AddWithValue("@nombre", oDisciplina.Dis_Nombre);
+            cmd.Parameters.AddWithValue("@descripcion", oDisciplina.Dis_Descripcion);
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = cnn;
+
+            cnn.Open();
+            cmd.ExecuteNonQuery();
+            cnn.Close();
+        }
+
+        public static void EliminarDisciplina(Disciplina oDisciplina)
+        {
+            SqlConnection cnn = new SqlConnection(cadenaConexion);
+
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "DELETE Disciplina WHERE ID=@id";
+            cmd.Parameters.AddWithValue("@id", oDisciplina.Dis_ID);
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = cnn;
+
+            cnn.Open();
+            cmd.ExecuteNonQuery();
+            cnn.Close();
+        }
+
     }
 }

@@ -33,6 +33,10 @@ namespace Vistas
             {
                 txtNombre.Text = gridDisciplina.CurrentRow.Cells["Nombre"].Value.ToString();
                 txtDescripcion.Text = gridDisciplina.CurrentRow.Cells["Descripcion"].Value.ToString();
+
+                btnActualizar.Enabled = true;
+                btnEliminar.Enabled = true;
+                btnGuardar.Enabled = false;
             }
         }
 
@@ -62,24 +66,17 @@ namespace Vistas
             btnEliminar.Enabled = false;
         }
 
-
-
-
-
-
-
-
-
-
-        private Disciplina CargarDisciplina()
+        private void btnActualizar_Click(object sender, EventArgs e)
         {
-            Disciplina oDis = new Disciplina();
-            oDis.Dis_Nombre = txtNombre.Text;
-            oDis.Dis_Descripcion = txtDescripcion.Text;
-            return oDis;
+            TrabajarDisciplina.ActualizarDisciplina(ExtraerDisciplina());
+            Cargar_GridDisciplina();
         }
 
-
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            TrabajarDisciplina.EliminarDisciplina(ExtraerDisciplina());
+            Cargar_GridDisciplina();
+        }
 
 
 
