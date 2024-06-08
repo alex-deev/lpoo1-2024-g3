@@ -28,7 +28,7 @@ namespace ClasesBase
                               "Genero as 'Genero', " +
                               "Altura as 'Altura', " +
                               "Peso as 'Peso', " +
-                              "FechaNac as 'Fecha Nac', " +
+                              "FechaNac as 'FechaNac', " +
                               "Direccion as 'Direccion', " +
                               "Email as 'Email' " +
                               "FROM Atleta";
@@ -146,5 +146,37 @@ namespace ClasesBase
             return count > 0;
         }
 
+        public static DataTable listarAtletaPorDni()
+        {
+            SqlConnection cnn = new SqlConnection(cadenaConexion);
+
+            SqlDataAdapter da = new SqlDataAdapter();
+
+            da.SelectCommand = new SqlCommand();
+            da.SelectCommand.Connection = cnn;
+
+            da.SelectCommand.CommandText = "listarAtleta";
+            da.SelectCommand.CommandType = CommandType.StoredProcedure;
+
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            return dt;
+        }
+        public static DataTable listarAtletaPorApellido()
+        {
+            SqlConnection cnn = new SqlConnection(cadenaConexion);
+
+            SqlDataAdapter da = new SqlDataAdapter();
+
+            da.SelectCommand = new SqlCommand();
+            da.SelectCommand.Connection = cnn;
+
+            da.SelectCommand.CommandText = "listarAtletaPorApellido";
+            da.SelectCommand.CommandType = CommandType.StoredProcedure;
+
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            return dt;
+        }
     }
 }
