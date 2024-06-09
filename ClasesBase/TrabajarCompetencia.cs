@@ -17,22 +17,8 @@ namespace ClasesBase
             SqlConnection cnn = new SqlConnection(cadenaConexion);
 
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = " SELECT ";
-            cmd.CommandText += " C.Nombre as 'Nombre', ";
-            cmd.CommandText += " T.Nombre as 'Categoría', ";
-            cmd.CommandText += " D.Nombre as 'Disciplina', ";
-            cmd.CommandText += " C.Descripcion as 'Descripción', ";
-            cmd.CommandText += " C.FechaInicio as 'Inicio', ";
-            cmd.CommandText += " C.FechaFin as 'Fin', ";
-            cmd.CommandText += " C.Estado as 'Estado', ";
-            cmd.CommandText += " C.Organizador as 'Organizador', ";
-            cmd.CommandText += " C.Ubicacion as 'Ubicación', ";
-            cmd.CommandText += " C.Sponsors as 'Sponsors', ";
-            cmd.CommandText += " C.ID as 'ID Competencia', C.Cat_ID as 'ID Categoría', C.Dis_ID as 'ID Disciplina' ";
-            cmd.CommandText += " FROM Competencia as C ";
-            cmd.CommandText += " LEFT JOIN Categoria as T ON (T.ID=C.Cat_ID) ";
-            cmd.CommandText += " LEFT JOIN Disciplina as D ON (D.ID=C.Dis_ID) ";
-            cmd.CommandType = CommandType.Text;
+            cmd.CommandText= "listarCompetencias";
+            cmd.CommandType = CommandType.StoredProcedure;
             cmd.Connection = cnn;
 
             SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -46,10 +32,7 @@ namespace ClasesBase
             SqlConnection cnn = new SqlConnection(cadenaConexion);
 
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = " INSERT INTO ";
-            cmd.CommandText += " Competencia (Nombre, Descripcion, FechaInicio, FechaFin, Estado, Organizador, Ubicacion, Sponsors, Cat_ID, Dis_ID) ";
-            cmd.CommandText += " VALUES (@nombre, @descripcion, @fechaInicio, @fechaFin, @estado, @organizador, @ubicacion, @sponsors, @cat_id, @dis_id) ";
-
+            cmd.CommandText = "insertarCompetencia";
             cmd.Parameters.AddWithValue("@nombre", c.Com_Nombre);
             cmd.Parameters.AddWithValue("@descripcion", c.Com_Descripcion);
             cmd.Parameters.AddWithValue("@fechaInicio", c.Com_FechaInicio);
@@ -60,7 +43,7 @@ namespace ClasesBase
             cmd.Parameters.AddWithValue("@sponsors", c.Com_Sponsors);
             cmd.Parameters.AddWithValue("@cat_id", c.Cat_ID);
             cmd.Parameters.AddWithValue("@dis_id", c.Dis_ID);
-            cmd.CommandType = CommandType.Text;
+            cmd.CommandType = CommandType.StoredProcedure;
             cmd.Connection = cnn;
 
             cnn.Open();
@@ -73,10 +56,7 @@ namespace ClasesBase
             SqlConnection cnn = new SqlConnection(cadenaConexion);
 
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = " UPDATE Competencia SET ";
-            cmd.CommandText += " Nombre=@nombre, Descripcion=@descripcion, FechaInicio=@fechaInicio, FechaFin=@fechaFin, Estado=@estado, Organizador=@organizador, Ubicacion=@ubicacion, Sponsors=@sponsors, Cat_ID=@cat_id, Dis_ID=@dis_id ";
-            cmd.CommandText += " WHERE ID=@id";
-
+            cmd.CommandText = "actualizarCompetencia";
             cmd.Parameters.AddWithValue("@id", c.Com_ID);
             cmd.Parameters.AddWithValue("@nombre", c.Com_Nombre);
             cmd.Parameters.AddWithValue("@descripcion", c.Com_Descripcion);
@@ -88,7 +68,7 @@ namespace ClasesBase
             cmd.Parameters.AddWithValue("@sponsors", c.Com_Sponsors);
             cmd.Parameters.AddWithValue("@cat_id", c.Cat_ID);
             cmd.Parameters.AddWithValue("@dis_id", c.Dis_ID);
-            cmd.CommandType = CommandType.Text;
+            cmd.CommandType = CommandType.StoredProcedure;
             cmd.Connection = cnn;
 
             cnn.Open();
@@ -101,9 +81,9 @@ namespace ClasesBase
             SqlConnection cnn = new SqlConnection(cadenaConexion);
 
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "DELETE Competencia WHERE ID=@id";
+            cmd.CommandText = "eliminarCompetencia";
             cmd.Parameters.AddWithValue("@id", c.Com_ID);
-            cmd.CommandType = CommandType.Text;
+            cmd.CommandType = CommandType.StoredProcedure;
             cmd.Connection = cnn;
 
             cnn.Open();
