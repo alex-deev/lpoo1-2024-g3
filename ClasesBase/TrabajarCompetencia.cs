@@ -74,7 +74,7 @@ namespace ClasesBase
 
             SqlCommand cmd = new SqlCommand();
             cmd.CommandText = " UPDATE Competencia SET ";
-            cmd.CommandText += " (Nombre=@nombre, Descripcion=@descripcion, FechaInicio=@fechaInicio, FechaFin=@fechaFin, Estado=@estado, Organizador=@organizador, Ubicacion=@ubicacion, Sponsors=@sponsors, Cat_ID=@cat_id, Dis_ID=@dis_id) ";
+            cmd.CommandText += " Nombre=@nombre, Descripcion=@descripcion, FechaInicio=@fechaInicio, FechaFin=@fechaFin, Estado=@estado, Organizador=@organizador, Ubicacion=@ubicacion, Sponsors=@sponsors, Cat_ID=@cat_id, Dis_ID=@dis_id ";
             cmd.CommandText += " WHERE ID=@id";
 
             cmd.Parameters.AddWithValue("@id", c.Com_ID);
