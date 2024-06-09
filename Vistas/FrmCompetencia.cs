@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace Vistas
 {
-    public partial class FrmCompetencias : Form
+    public partial class FrmCompetencia : Form
     {
-        public FrmCompetencias()
+        public FrmCompetencia()
         {
             InitializeComponent();
         }

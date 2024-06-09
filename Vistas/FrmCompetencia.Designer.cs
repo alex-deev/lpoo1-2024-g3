@@ -1,6 +1,6 @@
 ﻿namespace Vistas
 {
-    partial class FrmCompetencias
+    partial class FrmCompetencia
     {
         /// <summary>
         /// Required designer variable.
