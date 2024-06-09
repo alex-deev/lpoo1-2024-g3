@@ -18,22 +18,9 @@ namespace ClasesBase
             SqlConnection cnn = new SqlConnection(cadenaConexion);
 
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "SELECT " +
-                              "ID as 'Id', " +
-                              "DNI as 'DNI', " +
-                              "Apellido as 'Apellido', " +
-                              "Nombre as 'Nombre', " +
-                              "Nacionalidad as 'Nacionalidad', " +
-                              "Entrenador as 'Entrenador', " +
-                              "Genero as 'Genero', " +
-                              "Altura as 'Altura', " +
-                              "Peso as 'Peso', " +
-                              "FechaNac as 'FechaNac', " +
-                              "Direccion as 'Direccion', " +
-                              "Email as 'Email' " +
-                              "FROM Atleta";
+            cmd.CommandText = "listarParticipantes";
 
-            cmd.CommandType = CommandType.Text;
+            cmd.CommandType = CommandType.StoredProcedure;
             cmd.Connection = cnn;
 
             SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -47,9 +34,8 @@ namespace ClasesBase
         {
             SqlConnection cnn = new SqlConnection(cadenaConexion);
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "INSERT INTO Atleta(DNI, Apellido, Nombre, Nacionalidad, Entrenador, Genero, Altura, Peso, FechaNac, Direccion, Email) " +
-                              "VALUES (@dni, @apellido, @nombre, @nacionalidad, @entrenador, @genero, @altura, @peso, @fechaNac, @direccion, @email)";
-            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "insertarParticipante";
+            cmd.CommandType = CommandType.StoredProcedure;
             cmd.Connection = cnn;
 
             cmd.Parameters.AddWithValue("@dni", atleta.Atl_DNI);
@@ -75,12 +61,12 @@ namespace ClasesBase
             SqlConnection cnn = new SqlConnection(cadenaConexion);
             SqlCommand cmd = new SqlCommand();
 
-            cmd.CommandText = "DELETE FROM Atleta WHERE ID = @id";
-            cmd.Parameters.AddWithValue("@id", atleta.Atl_ID);
-            cmd.CommandType = CommandType.Text;
-            cmd.Connection = cnn;
+            cmd.CommandText = "eliminarParticipante";
+            cmd.CommandType = CommandType.StoredProcedure;
 
+            cmd.Parameters.AddWithValue("@id", atleta.Atl_ID);
             
+            cmd.Connection = cnn;
 
             cnn.Open();
             cmd.ExecuteNonQuery();
@@ -93,20 +79,8 @@ namespace ClasesBase
             SqlConnection cnn = new SqlConnection(cadenaConexion);
             SqlCommand cmd = new SqlCommand();
 
-            cmd.CommandText = "UPDATE Atleta SET " +
-                                 "DNI = @dni, " +
-                                 "Apellido = @apellido, " +
-                                 "Nombre = @nombre, " +
-                                 "Nacionalidad = @nacionalidad, " +
-                                 "Entrenador = @entrenador, " +
-                                 "Genero = @genero, " +
-                                 "Altura = @altura, " +
-                                 "Peso = @peso, " +
-                                 "FechaNac = @fechaNac, " +
-                                 "Direccion = @direccion, " +
-                                 "Email = @email " +
-                                 "WHERE ID = @id";
-            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "modificarParticiapante";
+            cmd.CommandType = CommandType.StoredProcedure;
             cmd.Connection = cnn;
 
             cmd.Parameters.AddWithValue("@id", atleta.Atl_ID);
@@ -133,8 +107,8 @@ namespace ClasesBase
             SqlConnection cnn = new SqlConnection(cadenaConexion);
 
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "SELECT COUNT(*) FROM Atleta WHERE DNI = @dni";
-            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "verificarParticipanteExistente";
+            cmd.CommandType = CommandType.StoredProcedure;
             cmd.Connection = cnn;
 
             cmd.Parameters.AddWithValue("@dni", dni);
