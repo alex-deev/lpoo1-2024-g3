@@ -40,11 +40,12 @@ namespace ClasesBase
 
             SqlCommand cmd = new SqlCommand();
             cmd.CommandText = "INSERT INTO Usuario (NombreUsuario, Contrasenia, ApellidoNombre, Rol_Codigo) ";
-            cmd.CommandText += " VALUES (@usuario, @contra, @ape_nom, @rol_cod) ";
-            cmd.Parameters.AddWithValue("@usuario", u.Usu_NombreUsuario);
-            cmd.Parameters.AddWithValue("@contra", u.Usu_Contraseña);
-            cmd.Parameters.AddWithValue("@ape_nom", u.Usu_ApellidoNombre);
-            cmd.Parameters.AddWithValue("@rol_cod", u.Rol_Codigo);
+            cmd.CommandText += " VALUES (@nombre_usuario, @contrasenia, @apellido_nombre, @rol_codigo) ";
+
+            cmd.Parameters.AddWithValue("@nombre_usuario", u.Usu_NombreUsuario);
+            cmd.Parameters.AddWithValue("@contrasenia", u.Usu_Contraseña);
+            cmd.Parameters.AddWithValue("@apellido_nombre", u.Usu_ApellidoNombre);
+            cmd.Parameters.AddWithValue("@rol_codigo", u.Rol_Codigo);
             cmd.CommandType = CommandType.Text;
             cmd.Connection = cnn;
 
@@ -58,14 +59,15 @@ namespace ClasesBase
             SqlConnection cnn = new SqlConnection(cadenaConexion);
 
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "UPDATE Usuario SET NombreUsuario=@usuario, Contrasenia=@contra, ";
-            cmd.CommandText += " ApellidoNombre=@ape_nom, Rol_Codigo=@rol_cod ";
+            cmd.CommandText = "UPDATE Usuario SET NombreUsuario=@nombre_usuario, Contrasenia=@contrasenia, ";
+            cmd.CommandText += " ApellidoNombre=@apellido_nombre, Rol_Codigo=@rol_codigo ";
             cmd.CommandText += " WHERE ID=@id";
+
             cmd.Parameters.AddWithValue("@id", u.Usu_ID);
-            cmd.Parameters.AddWithValue("@usuario", u.Usu_NombreUsuario);
-            cmd.Parameters.AddWithValue("@contra", u.Usu_Contraseña);
-            cmd.Parameters.AddWithValue("@ape_nom", u.Usu_ApellidoNombre);
-            cmd.Parameters.AddWithValue("@rol_cod", u.Rol_Codigo);
+            cmd.Parameters.AddWithValue("@nombre_usuario", u.Usu_NombreUsuario);
+            cmd.Parameters.AddWithValue("@contrasenia", u.Usu_Contraseña);
+            cmd.Parameters.AddWithValue("@apellido_nombre", u.Usu_ApellidoNombre);
+            cmd.Parameters.AddWithValue("@rol_codigo", u.Rol_Codigo);
             cmd.CommandType = CommandType.Text;
             cmd.Connection = cnn;
             
@@ -89,6 +91,31 @@ namespace ClasesBase
             cnn.Close();
         }
 
+        public static DataTable BuscarUsuarios(string patron)
+        {
+            SqlConnection cnn = new SqlConnection(cadenaConexion);
+
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "SELECT ";
+            cmd.CommandText += " R.Descripcion as 'Rol', ";
+            cmd.CommandText += " U.ApellidoNombre as 'Apellido y Nombre', ";
+            cmd.CommandText += " U.NombreUsuario as 'Usuario', ";
+            cmd.CommandText += " U.Contrasenia as 'Contraseña', ";
+            cmd.CommandText += " U.ID as 'ID', R.Codigo as 'Codigo Rol' ";
+            cmd.CommandText += " FROM Usuario as U ";
+            cmd.CommandText += " LEFT JOIN Roles as R ON (R.Codigo=U.Rol_Codigo) ";
+            cmd.CommandText += " WHERE U.NombreUsuario LIKE @patron ";
+
+            cmd.Parameters.AddWithValue("@patron", "%" + patron + "%");
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = cnn;
+
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            return dt;
+        }
+
         public static DataTable ListarRoles()
         {
             SqlConnection cnn = new SqlConnection(cadenaConexion);
@@ -104,12 +131,13 @@ namespace ClasesBase
             return dt;
         }
 
-        public static DataRow BuscarUsuarioBD(string nombreUsuario, string contrasenia)
+        public static DataRow BuscarUsuarioAutenticar(string nombreUsuario, string contrasenia)
         {
             SqlConnection cnn = new SqlConnection(cadenaConexion);
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "SELECT * FROM Usuario WHERE NombreUsuario=@usuario AND Contrasenia=@contrasenia";
-            cmd.Parameters.AddWithValue("@usuario", nombreUsuario);
+            cmd.CommandText = "SELECT * FROM Usuario WHERE NombreUsuario=@nombre_usuario AND Contrasenia=@contrasenia";
+
+            cmd.Parameters.AddWithValue("@nombre_usuario", nombreUsuario);
             cmd.Parameters.AddWithValue("@contrasenia", contrasenia);
             cmd.CommandType = CommandType.Text;
             cmd.Connection = cnn;

@@ -94,5 +94,16 @@ namespace Vistas
             btnEliminar.Enabled = false;
             btnGuardar.Enabled = true;
         }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtBuscador.Text))
+            {
+                Cargar_gridUsuarios();
+            } else
+            {
+                gridUsuarios.DataSource = TrabajarUsuario.BuscarUsuarios(txtBuscador.Text);
+            }
+        }
     }
 }
