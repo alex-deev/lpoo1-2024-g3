@@ -87,7 +87,10 @@ namespace Vistas
 
         private void competenciaToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
 
+            FrmCompetencia frmCompetencia = new FrmCompetencia();
+            frmCompetencia.Show();
         }
 
     }
