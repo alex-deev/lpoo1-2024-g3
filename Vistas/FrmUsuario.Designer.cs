@@ -42,6 +42,8 @@
             this.gridUsuarios = new System.Windows.Forms.DataGridView();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
+            this.txtBuscador = new System.Windows.Forms.TextBox();
+            this.btnBuscar = new System.Windows.Forms.Button();
             this.groupDatos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridUsuarios)).BeginInit();
             this.SuspendLayout();
@@ -156,10 +158,10 @@
             this.gridUsuarios.AllowUserToAddRows = false;
             this.gridUsuarios.AllowUserToDeleteRows = false;
             this.gridUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridUsuarios.Location = new System.Drawing.Point(13, 12);
+            this.gridUsuarios.Location = new System.Drawing.Point(13, 39);
             this.gridUsuarios.Name = "gridUsuarios";
             this.gridUsuarios.ReadOnly = true;
-            this.gridUsuarios.Size = new System.Drawing.Size(429, 323);
+            this.gridUsuarios.Size = new System.Drawing.Size(429, 296);
             this.gridUsuarios.TabIndex = 2;
             this.gridUsuarios.CurrentCellChanged += new System.EventHandler(this.gridUsuarios_CurrentCellChanged);
             // 
@@ -183,11 +185,30 @@
             this.btnNuevo.UseVisualStyleBackColor = true;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
+            // txtBuscador
+            // 
+            this.txtBuscador.Location = new System.Drawing.Point(13, 13);
+            this.txtBuscador.Name = "txtBuscador";
+            this.txtBuscador.Size = new System.Drawing.Size(348, 20);
+            this.txtBuscador.TabIndex = 5;
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Location = new System.Drawing.Point(367, 11);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(75, 23);
+            this.btnBuscar.TabIndex = 6;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
             // FrmUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(702, 381);
+            this.Controls.Add(this.btnBuscar);
+            this.Controls.Add(this.txtBuscador);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.btnNuevo);
@@ -202,6 +223,7 @@
             this.groupDatos.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridUsuarios)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -221,5 +243,7 @@
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnActualizar;
         private System.Windows.Forms.Button btnNuevo;
+        private System.Windows.Forms.TextBox txtBuscador;
+        private System.Windows.Forms.Button btnBuscar;
     }
 }
