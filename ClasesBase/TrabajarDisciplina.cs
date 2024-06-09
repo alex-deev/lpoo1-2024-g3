@@ -17,12 +17,8 @@ namespace ClasesBase
             SqlConnection cnn = new SqlConnection(cadenaConexion);
 
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "SELECT ";
-            cmd.CommandText += " Nombre, ";
-            cmd.CommandText += " Descripcion, ";
-            cmd.CommandText += " ID ";
-            cmd.CommandText += " FROM Disciplina ";
-            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "listarDisciplinas";
+            cmd.CommandType = CommandType.StoredProcedure;
             cmd.Connection = cnn;
 
             SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -36,12 +32,12 @@ namespace ClasesBase
             SqlConnection cnn = new SqlConnection(cadenaConexion);
 
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "INSERT INTO Disciplina (Nombre, Descripcion) ";
-            cmd.CommandText += " VALUES (@nombre, @descripcion) ";
+            cmd.CommandText = "insertarDisciplina";
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Connection = cnn;
+
             cmd.Parameters.AddWithValue("@nombre", oDisciplina.Dis_Nombre);
             cmd.Parameters.AddWithValue("@descripcion", oDisciplina.Dis_Descripcion);
-            cmd.CommandType = CommandType.Text;
-            cmd.Connection = cnn;
 
             cnn.Open();
             cmd.ExecuteNonQuery();
@@ -53,14 +49,14 @@ namespace ClasesBase
             SqlConnection cnn = new SqlConnection(cadenaConexion);
 
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "UPDATE Disciplina SET Nombre=@nombre, Descripcion=@descripcion ";
-            cmd.CommandText += " WHERE ID=@id";
+            cmd.CommandText = "actualizarDisciplina";
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Connection = cnn;
+
             cmd.Parameters.AddWithValue("@id", oDisciplina.Dis_ID);
             cmd.Parameters.AddWithValue("@nombre", oDisciplina.Dis_Nombre);
             cmd.Parameters.AddWithValue("@descripcion", oDisciplina.Dis_Descripcion);
-            cmd.CommandType = CommandType.Text;
-            cmd.Connection = cnn;
-
+            
             cnn.Open();
             cmd.ExecuteNonQuery();
             cnn.Close();
@@ -71,10 +67,11 @@ namespace ClasesBase
             SqlConnection cnn = new SqlConnection(cadenaConexion);
 
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "DELETE Disciplina WHERE ID=@id";
-            cmd.Parameters.AddWithValue("@id", oDisciplina.Dis_ID);
-            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "eliminarDisciplina";
+            cmd.CommandType = CommandType.StoredProcedure;
             cmd.Connection = cnn;
+
+            cmd.Parameters.AddWithValue("@id", oDisciplina.Dis_ID);
 
             cnn.Open();
             cmd.ExecuteNonQuery();
