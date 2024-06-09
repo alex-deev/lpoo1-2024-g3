@@ -131,7 +131,7 @@ namespace ClasesBase
             return dt;
         }
 
-        public static DataRow BuscarUsuarioBD(string nombreUsuario, string contrasenia)
+        public static DataRow BuscarUsuarioAutenticar(string nombreUsuario, string contrasenia)
         {
             SqlConnection cnn = new SqlConnection(cadenaConexion);
             SqlCommand cmd = new SqlCommand();

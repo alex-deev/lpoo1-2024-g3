@@ -25,7 +25,7 @@ namespace Vistas
         {
             if (ValidarUsuario() && ValidarContrasenia())
             {
-                DataRow dr = TrabajarUsuario.BuscarUsuarioBD(txtNombreUsuario.Text, txtContrasenia.Text);
+                DataRow dr = TrabajarUsuario.BuscarUsuarioAutenticar(txtNombreUsuario.Text, txtContrasenia.Text);
                 if (dr != null)
                 {
                     Usuario usuarioEncontrado = TrabajarUsuario.ConvertirUsuario(dr);
