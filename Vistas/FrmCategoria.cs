@@ -19,18 +19,69 @@ namespace Vistas
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            Categoria oCat = CargarCategoria();
-            string mensaje = "Nombre: " + oCat.Cat_Nombre;
-            mensaje += "\nDescripción: " + oCat.Cat_Descripcion;
-            MessageBox.Show(mensaje);
+            TrabajarCategoria.InsertarCategoria(ExtraerCategoria());
+            CargarCategoria();
         }
 
-        private Categoria CargarCategoria()
+        private void CargarCategoria()
         {
-            Categoria oCat = new Categoria();
-            oCat.Cat_Nombre = txtNombre.Text;
-            oCat.Cat_Descripcion = txtDescripcion.Text;
-            return oCat;
+            gridCategoria.DataSource = TrabajarCategoria.ListarCategorias();
         }
+
+        private Categoria ExtraerCategoria()
+        {
+            Categoria oCategoria = new Categoria();
+            oCategoria.Cat_ID = (int)gridCategoria.CurrentRow.Cells["ID"].Value;
+            oCategoria.Cat_Nombre = txtNombre.Text;
+            oCategoria.Cat_Descripcion = txtDescripcion.Text;
+
+            return oCategoria;
+        }
+
+        private void LimpiarCampos()
+        {
+            txtNombre.Clear();
+            txtDescripcion.Clear();
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            LimpiarCampos();
+
+            btnGuardar.Enabled = true;
+            btnActualizar.Enabled = false;
+            btnEliminar.Enabled = false;
+        }
+
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            TrabajarCategoria.ActualizarCategoria(ExtraerCategoria());
+            CargarCategoria();
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            TrabajarCategoria.EliminarCategoria(ExtraerCategoria());
+            CargarCategoria();
+        }
+
+        private void FrmCategoria_Load(object sender, EventArgs e)
+        {
+            CargarCategoria();
+        }
+
+        private void gridCategoria_CurrentCellChanged(object sender, EventArgs e)
+        {
+            if (gridCategoria.CurrentRow != null)
+            {
+                txtNombre.Text = gridCategoria.CurrentRow.Cells["Nombre"].Value.ToString();
+                txtDescripcion.Text = gridCategoria.CurrentRow.Cells["Descripcion"].Value.ToString();
+
+                btnActualizar.Enabled = true;
+                btnEliminar.Enabled = true;
+                btnGuardar.Enabled = false;
+            }
+        }
+
     }
 }
