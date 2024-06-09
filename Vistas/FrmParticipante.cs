@@ -53,7 +53,7 @@ namespace Vistas
                 cmbGenero.Text = gridParticipantes.CurrentRow.Cells["Genero"].Value.ToString();
                 numAltura.Value = Convert.ToDecimal(gridParticipantes.CurrentRow.Cells["Altura"].Value);
                 numPeso.Value = Convert.ToDecimal(gridParticipantes.CurrentRow.Cells["Peso"].Value);
-                dateFechaNac.Value = Convert.ToDateTime(gridParticipantes.CurrentRow.Cells["Fecha Nac"].Value);
+                dateFechaNac.Value = Convert.ToDateTime(gridParticipantes.CurrentRow.Cells["FechaNac"].Value);
                 txtDireccion.Text = gridParticipantes.CurrentRow.Cells["Direccion"].Value.ToString();
                 txtEmail.Text = gridParticipantes.CurrentRow.Cells["Email"].Value.ToString();            
             }
@@ -197,5 +197,18 @@ namespace Vistas
                 }
             }
         }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            if (rbtnDNI.Checked)
+            {
+              gridParticipantes.DataSource = TrabajarParticipante.listarAtletaPorDni();
+            }
+            if (rbtnApellido.Checked)
+            {
+                gridParticipantes.DataSource = TrabajarParticipante.listarAtletaPorApellido();
+            }
+        }
+
     }
 }
