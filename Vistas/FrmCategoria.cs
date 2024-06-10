@@ -31,7 +31,9 @@ namespace Vistas
         private Categoria ExtraerCategoria()
         {
             Categoria oCategoria = new Categoria();
-            oCategoria.Cat_ID = (int)gridCategoria.CurrentRow.Cells["ID"].Value;
+            if (gridCategoria.CurrentRow != null) {
+                oCategoria.Cat_ID = (int)gridCategoria.CurrentRow.Cells["ID"].Value;
+            }
             oCategoria.Cat_Nombre = txtNombre.Text;
             oCategoria.Cat_Descripcion = txtDescripcion.Text;
 

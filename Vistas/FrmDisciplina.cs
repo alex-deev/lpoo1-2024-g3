@@ -43,7 +43,10 @@ namespace Vistas
         private Disciplina ExtraerDisciplina() 
         {
             Disciplina oDisciplina = new Disciplina();
-            oDisciplina.Dis_ID = (int)gridDisciplina.CurrentRow.Cells["ID"].Value;
+            if (gridDisciplina.CurrentRow != null) 
+            {
+                oDisciplina.Dis_ID = (int)gridDisciplina.CurrentRow.Cells["ID"].Value;
+            }
             oDisciplina.Dis_Nombre = txtNombre.Text;
             oDisciplina.Dis_Descripcion = txtDescripcion.Text;
 

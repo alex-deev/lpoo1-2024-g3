@@ -26,8 +26,9 @@ namespace ClasesBase.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=sql.bsite.net\\MSSQL2016;Initial Catalog=fige_comdep;Persist Security " +
-            "Info=True;User ID=fige_comdep;Password=fige_password")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.\\SQLEXPRESS;AttachDbFilename=\"C:\\Users\\Mauro\\Documents\\UNJU - FACULT" +
+            "AD\\LPOO\\lpoo1-2024-g3\\comdep.mdf\";Integrated Security=True;Connect Timeout=30;Us" +
+            "er Instance=True")]
         public string comdepConnection {
             get {
                 return ((string)(this["comdepConnection"]));
