@@ -53,7 +53,10 @@ namespace Vistas
         private Usuario ExtraerUsuario()
         {
             Usuario oUsu = new Usuario();
-            oUsu.Usu_ID = (int) gridUsuarios.CurrentRow.Cells["ID"].Value;
+            if (gridUsuarios.CurrentRow != null) 
+            {
+                oUsu.Usu_ID = (int)gridUsuarios.CurrentRow.Cells["ID"].Value;
+            }
             oUsu.Usu_NombreUsuario = txtUsuario.Text;
             oUsu.Usu_Contraseña = txtContrasenia.Text;
             oUsu.Usu_ApellidoNombre = txtApellidoNombre.Text;

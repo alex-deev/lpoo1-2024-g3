@@ -79,7 +79,7 @@ namespace ClasesBase
             SqlConnection cnn = new SqlConnection(cadenaConexion);
             SqlCommand cmd = new SqlCommand();
 
-            cmd.CommandText = "modificarParticiapante";
+            cmd.CommandText = "modificarParticipante";
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Connection = cnn;
 

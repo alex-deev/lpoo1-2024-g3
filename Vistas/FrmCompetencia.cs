@@ -81,7 +81,10 @@ namespace Vistas
         private Competencia ExtraerCompetencia()
         {
             Competencia oCom = new Competencia();
-            oCom.Com_ID = (int) gridCompetencias.CurrentRow.Cells["ID Competencia"].Value;
+            if (gridCompetencias.CurrentRow != null) {
+                oCom.Com_ID = (int)gridCompetencias.CurrentRow.Cells["ID Competencia"].Value;
+            }
+            
             oCom.Com_Nombre = txtNombre.Text;
             oCom.Com_Descripcion = txtDescripcion.Text;
             oCom.Com_FechaInicio = dateFechaInicio.Value;
