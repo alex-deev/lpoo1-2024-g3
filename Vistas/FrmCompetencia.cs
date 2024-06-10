@@ -45,10 +45,9 @@ namespace Vistas
 
         private void Cargar_combCategoria()
         {
-            // TODO: IMPLEMENTAR cuando el desarrollo de la clase TrabajarCategorias este completo
-            //combCategoria.DisplayMember = "Nombre";
-            //combCategoria.ValueMember = "ID";
-            //combCategoria.DataSource = TrabajarCategoria.ListarCategorias();
+            combCategoria.DisplayMember = "Nombre";
+            combCategoria.ValueMember = "ID";
+            combCategoria.DataSource = TrabajarCategoria.ListarCategorias();
         }
 
         private void Cargar_combDisciplina()
@@ -91,8 +90,7 @@ namespace Vistas
             oCom.Com_Organizador = txtOrganizador.Text;
             oCom.Com_Ubicacion = txtUbicacion.Text;
             oCom.Com_Sponsors = txtSponsors.Text;
-            oCom.Cat_ID = (int) gridCompetencias.CurrentRow.Cells["ID Categoría"].Value; // Cambiar
-            // oCom.Cat_ID = (int) combCategoria.Selectedvalue;
+            oCom.Cat_ID = (int) combCategoria.SelectedValue;
             oCom.Dis_ID = (int) combDisciplina.SelectedValue;
             return oCom;
         }
