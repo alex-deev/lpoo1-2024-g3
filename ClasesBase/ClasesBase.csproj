@@ -55,6 +55,7 @@
     <Compile Include="TrabajarCompetencia.cs" />
     <Compile Include="TrabajarDisciplina.cs" />
     <Compile Include="TrabajarCategoria.cs" />
+    <Compile Include="TrabajarInscripcion.cs" />
     <Compile Include="TrabajarParticipante.cs" />
     <Compile Include="TrabajarUsuario.cs" />
     <Compile Include="Usuario.cs" />

@@ -93,5 +93,13 @@ namespace Vistas
             frmCompetencia.Show();
         }
 
+        private void inscripcionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Cursor.Current = Cursors.WaitCursor;
+
+            FrmInscripcion frmInscripcion = new FrmInscripcion();
+            frmInscripcion.Show();
+        }
+
     }
 }

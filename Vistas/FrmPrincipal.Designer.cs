@@ -33,8 +33,9 @@
             this.itemDiciplinas = new System.Windows.Forms.ToolStripMenuItem();
             this.itemParticipantes = new System.Windows.Forms.ToolStripMenuItem();
             this.itemUsuarios = new System.Windows.Forms.ToolStripMenuItem();
-            this.itemSalir = new System.Windows.Forms.ToolStripMenuItem();
             this.itemCompetencias = new System.Windows.Forms.ToolStripMenuItem();
+            this.itemSalir = new System.Windows.Forms.ToolStripMenuItem();
+            this.inscripcionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuInicio.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -46,64 +47,70 @@
             this.itemParticipantes,
             this.itemUsuarios,
             this.itemCompetencias,
+            this.inscripcionToolStripMenuItem,
             this.itemSalir});
             this.menuInicio.Location = new System.Drawing.Point(0, 0);
             this.menuInicio.Name = "menuInicio";
-            this.menuInicio.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
-            this.menuInicio.Size = new System.Drawing.Size(615, 28);
+            this.menuInicio.Size = new System.Drawing.Size(565, 24);
             this.menuInicio.TabIndex = 0;
             this.menuInicio.Text = "menuStrip1";
             // 
             // itemCategorias
             // 
             this.itemCategorias.Name = "itemCategorias";
-            this.itemCategorias.Size = new System.Drawing.Size(92, 24);
+            this.itemCategorias.Size = new System.Drawing.Size(75, 20);
             this.itemCategorias.Text = "Categorias";
             this.itemCategorias.Click += new System.EventHandler(this.itemCategorias_Click);
             // 
             // itemDiciplinas
             // 
             this.itemDiciplinas.Name = "itemDiciplinas";
-            this.itemDiciplinas.Size = new System.Drawing.Size(92, 24);
+            this.itemDiciplinas.Size = new System.Drawing.Size(75, 20);
             this.itemDiciplinas.Text = "Disciplinas";
             this.itemDiciplinas.Click += new System.EventHandler(this.itemDiciplinas_Click);
             // 
             // itemParticipantes
             // 
             this.itemParticipantes.Name = "itemParticipantes";
-            this.itemParticipantes.Size = new System.Drawing.Size(105, 24);
+            this.itemParticipantes.Size = new System.Drawing.Size(87, 20);
             this.itemParticipantes.Text = "Participantes";
             this.itemParticipantes.Click += new System.EventHandler(this.itemParticipantes_Click);
             // 
             // itemUsuarios
             // 
             this.itemUsuarios.Name = "itemUsuarios";
-            this.itemUsuarios.Size = new System.Drawing.Size(77, 24);
+            this.itemUsuarios.Size = new System.Drawing.Size(64, 20);
             this.itemUsuarios.Text = "Usuarios";
             this.itemUsuarios.Click += new System.EventHandler(this.itemUsuarios_Click);
-            // 
-            // itemSalir
-            // 
-            this.itemSalir.Name = "itemSalir";
-            this.itemSalir.Size = new System.Drawing.Size(50, 24);
-            this.itemSalir.Text = "Salir";
-            this.itemSalir.Click += new System.EventHandler(this.itemSalir_Click);
             // 
             // itemCompetencias
             // 
             this.itemCompetencias.Name = "itemCompetencias";
-            this.itemCompetencias.Size = new System.Drawing.Size(115, 24);
+            this.itemCompetencias.Size = new System.Drawing.Size(95, 20);
             this.itemCompetencias.Text = "Competencias";
             this.itemCompetencias.Click += new System.EventHandler(this.competenciaToolStripMenuItem_Click);
             // 
+            // itemSalir
+            // 
+            this.itemSalir.Name = "itemSalir";
+            this.itemSalir.Size = new System.Drawing.Size(41, 20);
+            this.itemSalir.Text = "Salir";
+            this.itemSalir.Click += new System.EventHandler(this.itemSalir_Click);
+            // 
+            // inscripcionToolStripMenuItem
+            // 
+            this.inscripcionToolStripMenuItem.Name = "inscripcionToolStripMenuItem";
+            this.inscripcionToolStripMenuItem.Size = new System.Drawing.Size(77, 20);
+            this.inscripcionToolStripMenuItem.Text = "Inscripcion";
+            this.inscripcionToolStripMenuItem.Click += new System.EventHandler(this.inscripcionToolStripMenuItem_Click);
+            // 
             // FrmPrincipal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(615, 475);
+            this.ClientSize = new System.Drawing.Size(565, 386);
             this.Controls.Add(this.menuInicio);
             this.MainMenuStrip = this.menuInicio;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmPrincipal";
             this.Text = "FrmPrincipal";
             this.Load += new System.EventHandler(this.FrmPrincipal_Load);
@@ -123,5 +130,6 @@
         private System.Windows.Forms.ToolStripMenuItem itemSalir;
         private System.Windows.Forms.ToolStripMenuItem itemUsuarios;
         private System.Windows.Forms.ToolStripMenuItem itemCompetencias;
+        private System.Windows.Forms.ToolStripMenuItem inscripcionToolStripMenuItem;
     }
 }
