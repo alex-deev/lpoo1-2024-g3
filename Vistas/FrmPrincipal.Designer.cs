@@ -34,8 +34,9 @@
             this.itemParticipantes = new System.Windows.Forms.ToolStripMenuItem();
             this.itemUsuarios = new System.Windows.Forms.ToolStripMenuItem();
             this.itemCompetencias = new System.Windows.Forms.ToolStripMenuItem();
-            this.itemSalir = new System.Windows.Forms.ToolStripMenuItem();
             this.inscripcionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.itemSalir = new System.Windows.Forms.ToolStripMenuItem();
+            this.configInscripcionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuInicio.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,10 +49,11 @@
             this.itemUsuarios,
             this.itemCompetencias,
             this.inscripcionToolStripMenuItem,
+            this.configInscripcionToolStripMenuItem,
             this.itemSalir});
             this.menuInicio.Location = new System.Drawing.Point(0, 0);
             this.menuInicio.Name = "menuInicio";
-            this.menuInicio.Size = new System.Drawing.Size(565, 24);
+            this.menuInicio.Size = new System.Drawing.Size(735, 24);
             this.menuInicio.TabIndex = 0;
             this.menuInicio.Text = "menuStrip1";
             // 
@@ -90,13 +92,6 @@
             this.itemCompetencias.Text = "Competencias";
             this.itemCompetencias.Click += new System.EventHandler(this.competenciaToolStripMenuItem_Click);
             // 
-            // itemSalir
-            // 
-            this.itemSalir.Name = "itemSalir";
-            this.itemSalir.Size = new System.Drawing.Size(41, 20);
-            this.itemSalir.Text = "Salir";
-            this.itemSalir.Click += new System.EventHandler(this.itemSalir_Click);
-            // 
             // inscripcionToolStripMenuItem
             // 
             this.inscripcionToolStripMenuItem.Name = "inscripcionToolStripMenuItem";
@@ -104,11 +99,25 @@
             this.inscripcionToolStripMenuItem.Text = "Inscripcion";
             this.inscripcionToolStripMenuItem.Click += new System.EventHandler(this.inscripcionToolStripMenuItem_Click);
             // 
+            // itemSalir
+            // 
+            this.itemSalir.Name = "itemSalir";
+            this.itemSalir.Size = new System.Drawing.Size(41, 20);
+            this.itemSalir.Text = "Salir";
+            this.itemSalir.Click += new System.EventHandler(this.itemSalir_Click);
+            // 
+            // configInscripcionToolStripMenuItem
+            // 
+            this.configInscripcionToolStripMenuItem.Name = "configInscripcionToolStripMenuItem";
+            this.configInscripcionToolStripMenuItem.Size = new System.Drawing.Size(116, 20);
+            this.configInscripcionToolStripMenuItem.Text = "Config Inscripcion";
+            this.configInscripcionToolStripMenuItem.Click += new System.EventHandler(this.configInscripcionToolStripMenuItem_Click);
+            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(565, 386);
+            this.ClientSize = new System.Drawing.Size(735, 404);
             this.Controls.Add(this.menuInicio);
             this.MainMenuStrip = this.menuInicio;
             this.Name = "FrmPrincipal";
@@ -131,5 +140,6 @@
         private System.Windows.Forms.ToolStripMenuItem itemUsuarios;
         private System.Windows.Forms.ToolStripMenuItem itemCompetencias;
         private System.Windows.Forms.ToolStripMenuItem inscripcionToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem configInscripcionToolStripMenuItem;
     }
 }

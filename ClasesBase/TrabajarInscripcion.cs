@@ -81,5 +81,8 @@ namespace ClasesBase
             da.Fill(dt);
             return dt;
         }
+
+        //Trabajar Inscripciones TpFinal
+       
     }
 }

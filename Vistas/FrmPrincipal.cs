@@ -101,5 +101,11 @@ namespace Vistas
             frmInscripcion.Show();
         }
 
+        private void configInscripcionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmAnularInscripcion frmAnularInscripcion = new FrmAnularInscripcion();
+            frmAnularInscripcion.Show();
+        }
+
     }
 }

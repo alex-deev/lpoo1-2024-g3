@@ -152,5 +152,24 @@ namespace ClasesBase
             da.Fill(dt);
             return dt;
         }
+
+        //Trabajar Participante TpFinal
+        public static DataTable buscarParticipante(string dni)
+        {
+            SqlConnection cnn = new SqlConnection(cadenaConexion);
+
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "buscarParticipante";
+
+            cmd.Parameters.AddWithValue("@patron",dni);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Connection = cnn;
+
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            return dt;
+
+        }
     }
 }
