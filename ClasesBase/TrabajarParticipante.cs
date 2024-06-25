@@ -171,5 +171,41 @@ namespace ClasesBase
             return dt;
 
         }
+        public static DataTable mostrarCompetencia(int idAtleta)
+        {
+            SqlConnection cnn = new SqlConnection(cadenaConexion);
+
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "listarCompetencia";
+
+            cmd.Parameters.AddWithValue("@patron", idAtleta);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Connection = cnn;
+
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            return dt;
+
+        }
+        public static DataTable obtenerCompetenciasDeAtleta(int idAtleta)
+        {
+            SqlConnection cnn = new SqlConnection(cadenaConexion);
+
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "ObtenerCompetenciasDeAtleta";
+
+            cmd.Parameters.AddWithValue("@idAtleta", idAtleta);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Connection = cnn;
+
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            return dt;
+        }
+
+
+
     }
 }

@@ -33,12 +33,10 @@
             this.btnBuscar = new System.Windows.Forms.Button();
             this.gridParticipantes = new System.Windows.Forms.DataGridView();
             this.comCompetencia = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.gridCompetencia = new System.Windows.Forms.DataGridView();
             this.btnAnularInscripcion = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.gridParticipantes)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridCompetencia)).BeginInit();
             this.SuspendLayout();
             // 
             // lblBuscar
@@ -70,6 +68,7 @@
             // 
             // gridParticipantes
             // 
+            this.gridParticipantes.AllowUserToAddRows = false;
             this.gridParticipantes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridParticipantes.Location = new System.Drawing.Point(15, 98);
             this.gridParticipantes.Name = "gridParticipantes";
@@ -79,51 +78,36 @@
             // comCompetencia
             // 
             this.comCompetencia.FormattingEnabled = true;
-            this.comCompetencia.Location = new System.Drawing.Point(613, 337);
+            this.comCompetencia.Location = new System.Drawing.Point(592, 256);
             this.comCompetencia.Name = "comCompetencia";
             this.comCompetencia.Size = new System.Drawing.Size(121, 21);
             this.comCompetencia.TabIndex = 4;
             // 
-            // textBox1
+            // gridCompetencia
             // 
-            this.textBox1.Location = new System.Drawing.Point(613, 256);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(121, 20);
-            this.textBox1.TabIndex = 5;
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(15, 256);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(529, 150);
-            this.dataGridView2.TabIndex = 6;
+            this.gridCompetencia.AllowUserToAddRows = false;
+            this.gridCompetencia.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridCompetencia.Location = new System.Drawing.Point(15, 256);
+            this.gridCompetencia.Name = "gridCompetencia";
+            this.gridCompetencia.Size = new System.Drawing.Size(529, 150);
+            this.gridCompetencia.TabIndex = 6;
             // 
             // btnAnularInscripcion
             // 
-            this.btnAnularInscripcion.Location = new System.Drawing.Point(613, 385);
+            this.btnAnularInscripcion.Location = new System.Drawing.Point(592, 310);
             this.btnAnularInscripcion.Name = "btnAnularInscripcion";
             this.btnAnularInscripcion.Size = new System.Drawing.Size(121, 21);
             this.btnAnularInscripcion.TabIndex = 7;
             this.btnAnularInscripcion.Text = "Anular";
             this.btnAnularInscripcion.UseVisualStyleBackColor = true;
             // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(613, 303);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(121, 20);
-            this.textBox2.TabIndex = 8;
-            // 
             // FrmAnularInscripcion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(983, 472);
-            this.Controls.Add(this.textBox2);
             this.Controls.Add(this.btnAnularInscripcion);
-            this.Controls.Add(this.dataGridView2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.gridCompetencia);
             this.Controls.Add(this.comCompetencia);
             this.Controls.Add(this.gridParticipantes);
             this.Controls.Add(this.btnBuscar);
@@ -132,7 +116,7 @@
             this.Name = "FrmAnularInscripcion";
             this.Text = "FrmAnularInscripcion";
             ((System.ComponentModel.ISupportInitialize)(this.gridParticipantes)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridCompetencia)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -145,9 +129,7 @@
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.DataGridView gridParticipantes;
         private System.Windows.Forms.ComboBox comCompetencia;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView gridCompetencia;
         private System.Windows.Forms.Button btnAnularInscripcion;
-        private System.Windows.Forms.TextBox textBox2;
     }
 }

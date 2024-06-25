@@ -30,6 +30,14 @@ namespace Vistas
             }
         }
 
+        private void gridParticipantes_CurrentCellChanged(object sender, EventArgs e)
+        {
+            if (gridParticipantes.CurrentRow != null)
+            {
+                int idAtleta = Convert.ToInt32(gridParticipantes.CurrentRow.Cells["ID"].Value);
 
+                gridCompetencia.DataSource = TrabajarParticipante.obtenerCompetenciasDeAtleta(idAtleta);
+            }
+        }
     }
 }
