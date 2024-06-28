@@ -83,7 +83,5 @@ namespace Vistas
                 gridCompetencia.DataSource = null;
             }
         }
-
-
     }
 }
