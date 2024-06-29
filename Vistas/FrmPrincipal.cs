@@ -107,5 +107,11 @@ namespace Vistas
             frmAnularInscripcion.Show();
         }
 
+        private void resultadisToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmResultados frmResultados = new FrmResultados();
+            frmResultados.Show();
+        }
+
     }
 }

@@ -59,6 +59,7 @@
     <Compile Include="TrabajarCategoria.cs" />
     <Compile Include="TrabajarInscripcion.cs" />
     <Compile Include="TrabajarParticipante.cs" />
+    <Compile Include="TrabajarResultados.cs" />
     <Compile Include="TrabajarUsuario.cs" />
     <Compile Include="Usuario.cs" />
   </ItemGroup>
