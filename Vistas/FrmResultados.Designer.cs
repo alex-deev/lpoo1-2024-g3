@@ -164,6 +164,7 @@
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.lblCompetencia);
             this.Name = "FrmResultados";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Formulario Resultados";
             ((System.ComponentModel.ISupportInitialize)(this.gridResultados)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numIdCompetencia)).EndInit();

@@ -55,8 +55,16 @@ namespace Vistas
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            TrabajarDisciplina.InsertarDisciplina(ExtraerDisciplina());
-            Cargar_GridDisciplina();
+            if (!string.IsNullOrEmpty(txtNombre.Text) && !string.IsNullOrEmpty(txtDescripcion.Text))
+            {
+                TrabajarDisciplina.InsertarDisciplina(ExtraerDisciplina());
+                Cargar_GridDisciplina();
+            }
+            else 
+            {
+                MessageBox.Show("Debe completar los campos Nombre y Descripcion");
+            }
+            
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)

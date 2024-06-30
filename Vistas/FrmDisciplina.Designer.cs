@@ -171,6 +171,7 @@
             this.Controls.Add(this.btnGuardar);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmDisciplina";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmDisciplina";
             this.Load += new System.EventHandler(this.FrmDisciplina_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridDisciplina)).EndInit();
