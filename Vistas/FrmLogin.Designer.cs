@@ -66,6 +66,7 @@
             this.txtContrasenia.Name = "txtContrasenia";
             this.txtContrasenia.Size = new System.Drawing.Size(100, 22);
             this.txtContrasenia.TabIndex = 3;
+            this.txtContrasenia.TextChanged += new System.EventHandler(this.txtContrasenia_TextChanged);
             // 
             // btnIngresar_Click
             // 

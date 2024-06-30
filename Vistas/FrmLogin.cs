@@ -65,5 +65,10 @@ namespace Vistas
                 return true;
             }
         }
+
+        private void txtContrasenia_TextChanged(object sender, EventArgs e)
+        {
+            txtContrasenia.PasswordChar = '*';
+        }
     }
 }

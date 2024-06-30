@@ -81,6 +81,11 @@ namespace Vistas
             Cargar_GridDisciplina();
         }
 
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
 
 
     }
