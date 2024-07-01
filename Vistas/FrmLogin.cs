@@ -37,6 +37,8 @@ namespace Vistas
                 else 
                 {
                     MessageBox.Show("El usuario y contraseña ingresado no existe, ingrese nuevamente los datos");
+                    txtNombreUsuario.Text = "";
+                    txtContrasenia.Text = "";
                 }
             }
             else

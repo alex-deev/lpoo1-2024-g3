@@ -31,7 +31,6 @@
             this.lblCompetencia = new System.Windows.Forms.Label();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.gridResultados = new System.Windows.Forms.DataGridView();
-            this.numIdCompetencia = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -40,8 +39,8 @@
             this.txtAtletasDescalificados = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.btnSalir = new System.Windows.Forms.Button();
+            this.comboCompetencias = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.gridResultados)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numIdCompetencia)).BeginInit();
             this.SuspendLayout();
             // 
             // lblCompetencia
@@ -71,13 +70,6 @@
             this.gridResultados.RowTemplate.Height = 24;
             this.gridResultados.Size = new System.Drawing.Size(637, 304);
             this.gridResultados.TabIndex = 3;
-            // 
-            // numIdCompetencia
-            // 
-            this.numIdCompetencia.Location = new System.Drawing.Point(363, 45);
-            this.numIdCompetencia.Name = "numIdCompetencia";
-            this.numIdCompetencia.Size = new System.Drawing.Size(120, 22);
-            this.numIdCompetencia.TabIndex = 4;
             // 
             // label1
             // 
@@ -146,11 +138,20 @@
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
+            // comboCompetencias
+            // 
+            this.comboCompetencias.FormattingEnabled = true;
+            this.comboCompetencias.Location = new System.Drawing.Point(357, 43);
+            this.comboCompetencias.Name = "comboCompetencias";
+            this.comboCompetencias.Size = new System.Drawing.Size(169, 24);
+            this.comboCompetencias.TabIndex = 13;
+            // 
             // FrmResultados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(857, 687);
+            this.Controls.Add(this.comboCompetencias);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtAtletasDescalificados);
@@ -159,15 +160,14 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.numIdCompetencia);
             this.Controls.Add(this.gridResultados);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.lblCompetencia);
             this.Name = "FrmResultados";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Formulario Resultados";
+            this.Load += new System.EventHandler(this.FrmResultados_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridResultados)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numIdCompetencia)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -178,7 +178,6 @@
         private System.Windows.Forms.Label lblCompetencia;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.DataGridView gridResultados;
-        private System.Windows.Forms.NumericUpDown numIdCompetencia;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -187,5 +186,6 @@
         private System.Windows.Forms.TextBox txtAtletasDescalificados;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.ComboBox comboCompetencias;
     }
 }
