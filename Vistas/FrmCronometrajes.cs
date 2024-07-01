@@ -26,7 +26,9 @@ namespace Vistas
 
             groupInicio.Enabled = false;
             groupFin.Enabled = false;
+            groupInfoEstado.Enabled = false;
             gridParticipantes.Enabled = false;
+            btnHabilitarCorrecion.Enabled = false;
             btnElegirCompetencia.Enabled = false;
         }
 
@@ -82,7 +84,7 @@ namespace Vistas
 
                 DataRow dr = TrabajarEvento.BuscarEvento(idCompetencia, idParticipante);
                 Evento oEvento = TrabajarEvento.ConvertirEvento(dr);
-                if (oEvento.Eve_Estado == "Acreditado")
+                if (oEvento.Eve_Estado.Equals("Acreditado"))
                 {
                     if (oEvento.Eve_HoraInicio == DateTime.MinValue)
                     {
@@ -92,9 +94,8 @@ namespace Vistas
                     {
                         groupFin.Enabled = true;
                     }
-
-                    btnHabilitarCorrecion.Enabled = true;
                     groupInfoEstado.Enabled = true;
+                    btnHabilitarCorrecion.Enabled = true;
                 }
                 CargarInicio(oEvento.Eve_HoraInicio);
                 CargarFin(oEvento.Eve_HoraFin);
