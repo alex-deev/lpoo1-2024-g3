@@ -77,15 +77,13 @@ namespace Vistas
 
         private void itemUsuarios_Click(object sender, EventArgs e)
         {
-            // Cambia el Cursor de Windows al tipo 'Esperando' termporalmente,
-            // el cursor vuelve al tipo 'Normal' una vez aparece el nuevo Form en pantalla
             Cursor.Current = Cursors.WaitCursor;
 
             FrmUsuario frmUsuario = new FrmUsuario();
             frmUsuario.Show();
         }
 
-        private void competenciaToolStripMenuItem_Click(object sender, EventArgs e)
+        private void itemCompetencia_Click(object sender, EventArgs e)
         {
             Cursor.Current = Cursors.WaitCursor;
 
@@ -93,7 +91,7 @@ namespace Vistas
             frmCompetencia.Show();
         }
 
-        private void inscripcionToolStripMenuItem_Click(object sender, EventArgs e)
+        private void itemInscripcionSubitemNueva_Click(object sender, EventArgs e)
         {
             Cursor.Current = Cursors.WaitCursor;
 
@@ -101,16 +99,22 @@ namespace Vistas
             frmInscripcion.Show();
         }
 
-        private void configInscripcionToolStripMenuItem_Click(object sender, EventArgs e)
+        private void itemInscripcionSubitemConfigurar_Click(object sender, EventArgs e)
         {
             FrmAnularInscripcion frmAnularInscripcion = new FrmAnularInscripcion();
             frmAnularInscripcion.Show();
         }
 
-        private void resultadisToolStripMenuItem_Click(object sender, EventArgs e)
+        private void itemResultados_Click(object sender, EventArgs e)
         {
             FrmResultados frmResultados = new FrmResultados();
             frmResultados.Show();
+        }
+
+        private void cronometrajesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmCronometrajes frmCronometrajes = new FrmCronometrajes();
+            frmCronometrajes.Show();
         }
 
     }

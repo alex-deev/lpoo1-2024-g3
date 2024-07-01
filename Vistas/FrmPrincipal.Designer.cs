@@ -34,10 +34,12 @@
             this.itemParticipantes = new System.Windows.Forms.ToolStripMenuItem();
             this.itemUsuarios = new System.Windows.Forms.ToolStripMenuItem();
             this.itemCompetencias = new System.Windows.Forms.ToolStripMenuItem();
-            this.inscripcionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.configInscripcionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.itemInscripcion = new System.Windows.Forms.ToolStripMenuItem();
+            this.itemInscripcionSubitemConfigurar = new System.Windows.Forms.ToolStripMenuItem();
+            this.itemResultados = new System.Windows.Forms.ToolStripMenuItem();
             this.itemSalir = new System.Windows.Forms.ToolStripMenuItem();
-            this.resultadisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cronometrajesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.itemInscripcionSubitemNueva = new System.Windows.Forms.ToolStripMenuItem();
             this.menuInicio.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,88 +51,102 @@
             this.itemParticipantes,
             this.itemUsuarios,
             this.itemCompetencias,
-            this.inscripcionToolStripMenuItem,
-            this.configInscripcionToolStripMenuItem,
-            this.resultadisToolStripMenuItem,
+            this.itemInscripcion,
+            this.itemResultados,
+            this.cronometrajesToolStripMenuItem,
             this.itemSalir});
             this.menuInicio.Location = new System.Drawing.Point(0, 0);
             this.menuInicio.Name = "menuInicio";
-            this.menuInicio.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
-            this.menuInicio.Size = new System.Drawing.Size(980, 28);
+            this.menuInicio.Size = new System.Drawing.Size(735, 24);
             this.menuInicio.TabIndex = 0;
             this.menuInicio.Text = "menuStrip1";
             // 
             // itemCategorias
             // 
             this.itemCategorias.Name = "itemCategorias";
-            this.itemCategorias.Size = new System.Drawing.Size(92, 24);
+            this.itemCategorias.Size = new System.Drawing.Size(75, 20);
             this.itemCategorias.Text = "Categorias";
             this.itemCategorias.Click += new System.EventHandler(this.itemCategorias_Click);
             // 
             // itemDiciplinas
             // 
             this.itemDiciplinas.Name = "itemDiciplinas";
-            this.itemDiciplinas.Size = new System.Drawing.Size(92, 24);
+            this.itemDiciplinas.Size = new System.Drawing.Size(75, 20);
             this.itemDiciplinas.Text = "Disciplinas";
             this.itemDiciplinas.Click += new System.EventHandler(this.itemDiciplinas_Click);
             // 
             // itemParticipantes
             // 
             this.itemParticipantes.Name = "itemParticipantes";
-            this.itemParticipantes.Size = new System.Drawing.Size(105, 24);
+            this.itemParticipantes.Size = new System.Drawing.Size(87, 20);
             this.itemParticipantes.Text = "Participantes";
             this.itemParticipantes.Click += new System.EventHandler(this.itemParticipantes_Click);
             // 
             // itemUsuarios
             // 
             this.itemUsuarios.Name = "itemUsuarios";
-            this.itemUsuarios.Size = new System.Drawing.Size(77, 24);
+            this.itemUsuarios.Size = new System.Drawing.Size(64, 20);
             this.itemUsuarios.Text = "Usuarios";
             this.itemUsuarios.Click += new System.EventHandler(this.itemUsuarios_Click);
             // 
             // itemCompetencias
             // 
             this.itemCompetencias.Name = "itemCompetencias";
-            this.itemCompetencias.Size = new System.Drawing.Size(115, 24);
+            this.itemCompetencias.Size = new System.Drawing.Size(95, 20);
             this.itemCompetencias.Text = "Competencias";
-            this.itemCompetencias.Click += new System.EventHandler(this.competenciaToolStripMenuItem_Click);
+            this.itemCompetencias.Click += new System.EventHandler(this.itemCompetencia_Click);
             // 
-            // inscripcionToolStripMenuItem
+            // itemInscripcion
             // 
-            this.inscripcionToolStripMenuItem.Name = "inscripcionToolStripMenuItem";
-            this.inscripcionToolStripMenuItem.Size = new System.Drawing.Size(92, 24);
-            this.inscripcionToolStripMenuItem.Text = "Inscripcion";
-            this.inscripcionToolStripMenuItem.Click += new System.EventHandler(this.inscripcionToolStripMenuItem_Click);
+            this.itemInscripcion.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.itemInscripcionSubitemNueva,
+            this.itemInscripcionSubitemConfigurar});
+            this.itemInscripcion.Name = "itemInscripcion";
+            this.itemInscripcion.Size = new System.Drawing.Size(77, 20);
+            this.itemInscripcion.Text = "Inscripcion";
             // 
-            // configInscripcionToolStripMenuItem
+            // itemInscripcionSubitemConfigurar
             // 
-            this.configInscripcionToolStripMenuItem.Name = "configInscripcionToolStripMenuItem";
-            this.configInscripcionToolStripMenuItem.Size = new System.Drawing.Size(140, 24);
-            this.configInscripcionToolStripMenuItem.Text = "Config Inscripcion";
-            this.configInscripcionToolStripMenuItem.Click += new System.EventHandler(this.configInscripcionToolStripMenuItem_Click);
+            this.itemInscripcionSubitemConfigurar.Name = "itemInscripcionSubitemConfigurar";
+            this.itemInscripcionSubitemConfigurar.Size = new System.Drawing.Size(192, 22);
+            this.itemInscripcionSubitemConfigurar.Text = "Configurar Inscripción";
+            this.itemInscripcionSubitemConfigurar.Click += new System.EventHandler(this.itemInscripcionSubitemConfigurar_Click);
+            // 
+            // itemResultados
+            // 
+            this.itemResultados.Name = "itemResultados";
+            this.itemResultados.Size = new System.Drawing.Size(76, 20);
+            this.itemResultados.Text = "Resultados";
+            this.itemResultados.Click += new System.EventHandler(this.itemResultados_Click);
             // 
             // itemSalir
             // 
             this.itemSalir.Name = "itemSalir";
-            this.itemSalir.Size = new System.Drawing.Size(50, 24);
+            this.itemSalir.Size = new System.Drawing.Size(41, 20);
             this.itemSalir.Text = "Salir";
             this.itemSalir.Click += new System.EventHandler(this.itemSalir_Click);
             // 
-            // resultadisToolStripMenuItem
+            // cronometrajesToolStripMenuItem
             // 
-            this.resultadisToolStripMenuItem.Name = "resultadisToolStripMenuItem";
-            this.resultadisToolStripMenuItem.Size = new System.Drawing.Size(93, 24);
-            this.resultadisToolStripMenuItem.Text = "Resultados";
-            this.resultadisToolStripMenuItem.Click += new System.EventHandler(this.resultadisToolStripMenuItem_Click);
+            this.cronometrajesToolStripMenuItem.Name = "cronometrajesToolStripMenuItem";
+            this.cronometrajesToolStripMenuItem.Size = new System.Drawing.Size(97, 20);
+            this.cronometrajesToolStripMenuItem.Text = "Cronometrajes";
+            this.cronometrajesToolStripMenuItem.Click += new System.EventHandler(this.cronometrajesToolStripMenuItem_Click);
+            // 
+            // itemInscripcionSubitemNueva
+            // 
+            this.itemInscripcionSubitemNueva.Name = "itemInscripcionSubitemNueva";
+            this.itemInscripcionSubitemNueva.Size = new System.Drawing.Size(192, 22);
+            this.itemInscripcionSubitemNueva.Text = "Nueva Inscripción";
+            this.itemInscripcionSubitemNueva.Click += new System.EventHandler(this.itemInscripcionSubitemNueva_Click);
             // 
             // FrmPrincipal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(980, 497);
+            this.ClientSize = new System.Drawing.Size(735, 404);
             this.Controls.Add(this.menuInicio);
             this.MainMenuStrip = this.menuInicio;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FrmPrincipal";
             this.Text = "FrmPrincipal";
             this.Load += new System.EventHandler(this.FrmPrincipal_Load);
@@ -150,8 +166,10 @@
         private System.Windows.Forms.ToolStripMenuItem itemSalir;
         private System.Windows.Forms.ToolStripMenuItem itemUsuarios;
         private System.Windows.Forms.ToolStripMenuItem itemCompetencias;
-        private System.Windows.Forms.ToolStripMenuItem inscripcionToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem configInscripcionToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem resultadisToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem itemInscripcion;
+        private System.Windows.Forms.ToolStripMenuItem itemResultados;
+        private System.Windows.Forms.ToolStripMenuItem itemInscripcionSubitemConfigurar;
+        private System.Windows.Forms.ToolStripMenuItem cronometrajesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem itemInscripcionSubitemNueva;
     }
 }
