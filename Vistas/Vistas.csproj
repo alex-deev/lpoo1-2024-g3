@@ -64,6 +64,12 @@
     <Compile Include="FrmCompetencia.Designer.cs">
       <DependentUpon>FrmCompetencia.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmCronometrajes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCronometrajes.Designer.cs">
+      <DependentUpon>FrmCronometrajes.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmDisciplina.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,6 +122,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmCompetencia.resx">
       <DependentUpon>FrmCompetencia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCronometrajes.resx">
+      <DependentUpon>FrmCronometrajes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmDisciplina.resx">
       <DependentUpon>FrmDisciplina.cs</DependentUpon>
