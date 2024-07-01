@@ -158,11 +158,16 @@ namespace Vistas
             {
                 Atleta atleta = new Atleta();
                 atleta.Atl_ID = (int) gridParticipantes.CurrentRow.Cells["ID"].Value;
-                TrabajarParticipante.eliminarParticipante(atleta);
+                var confirmacion = MessageBox.Show("¿Estás seguro de que deseas eliminar este usuario?", "Confirmar Modificación", MessageBoxButtons.YesNo);
+                if (confirmacion == DialogResult.Yes)
+                {
+                    TrabajarParticipante.eliminarParticipante(atleta);
 
-                MessageBox.Show("Participante eliminado");
-                limpiarCampos();
-                cargarParticipantes();
+                    MessageBox.Show("Participante eliminado");
+                    limpiarCampos();
+                    cargarParticipantes();
+                }
+                
             }
 
         }

@@ -10,7 +10,7 @@ namespace ClasesBase
 {
    public class TrabajarCategoria
     {
-            static string cadenaConexion = ClasesBase.Properties.Settings.Default.comdepConnection;
+       static string cadenaConexion = ClasesBase.Properties.Settings.Default.comdepConnection;
 
             public static DataTable ListarCategorias()
             {
