@@ -64,6 +64,7 @@ namespace Vistas
                 //SE LIMPIAN LOS GRID
                 gridParticipantes.DataSource = null;
                 gridCompetencia.DataSource = null;
+                txtIdCompetencia.Text = null;
             }
         }
 
@@ -81,6 +82,7 @@ namespace Vistas
                 //SE LIMPIAN LOS GRID
                 gridParticipantes.DataSource = null;
                 gridCompetencia.DataSource = null;
+                txtIdCompetencia.Text = null;
             }
         }
     }
