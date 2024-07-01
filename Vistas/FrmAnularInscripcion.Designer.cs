@@ -106,7 +106,6 @@
             this.txtIdCompetencia.Name = "txtIdCompetencia";
             this.txtIdCompetencia.Size = new System.Drawing.Size(121, 20);
             this.txtIdCompetencia.TabIndex = 8;
-            this.txtIdCompetencia.Visible = false;
             // 
             // lblTituloCompetencia
             // 

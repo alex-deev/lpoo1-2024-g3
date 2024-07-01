@@ -66,6 +66,7 @@
             this.txtContrasenia.Name = "txtContrasenia";
             this.txtContrasenia.Size = new System.Drawing.Size(100, 22);
             this.txtContrasenia.TabIndex = 3;
+            this.txtContrasenia.TextChanged += new System.EventHandler(this.txtContrasenia_TextChanged);
             // 
             // btnIngresar_Click
             // 
@@ -88,6 +89,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "FrmLogin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmLogin";
             this.ResumeLayout(false);
             this.PerformLayout();

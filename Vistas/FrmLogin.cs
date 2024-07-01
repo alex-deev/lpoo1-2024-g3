@@ -34,6 +34,12 @@ namespace Vistas
                     this.CodigoRol = usuarioEncontrado.Rol_Codigo;
                     this.Close();
                 }
+                else 
+                {
+                    MessageBox.Show("El usuario y contraseña ingresado no existe, ingrese nuevamente los datos");
+                    txtNombreUsuario.Text = "";
+                    txtContrasenia.Text = "";
+                }
             }
             else
             {
@@ -64,6 +70,11 @@ namespace Vistas
             {
                 return true;
             }
+        }
+
+        private void txtContrasenia_TextChanged(object sender, EventArgs e)
+        {
+            txtContrasenia.PasswordChar = '*';
         }
     }
 }

@@ -109,13 +109,20 @@
             // 
             // numAltura
             // 
+            this.numAltura.DecimalPlaces = 2;
             this.numAltura.Location = new System.Drawing.Point(692, 254);
+            this.numAltura.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             this.numAltura.Name = "numAltura";
             this.numAltura.Size = new System.Drawing.Size(120, 20);
             this.numAltura.TabIndex = 7;
             // 
             // numPeso
             // 
+            this.numPeso.DecimalPlaces = 3;
             this.numPeso.Location = new System.Drawing.Point(692, 280);
             this.numPeso.Name = "numPeso";
             this.numPeso.Size = new System.Drawing.Size(120, 20);

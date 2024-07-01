@@ -38,6 +38,7 @@
             this.btnActualizar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnSalir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gridDisciplina)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -115,7 +116,7 @@
             // 
             // btnActualizar
             // 
-            this.btnActualizar.Location = new System.Drawing.Point(665, 334);
+            this.btnActualizar.Location = new System.Drawing.Point(629, 334);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(100, 28);
             this.btnActualizar.TabIndex = 7;
@@ -125,7 +126,7 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(509, 334);
+            this.btnEliminar.Location = new System.Drawing.Point(482, 334);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(100, 28);
             this.btnEliminar.TabIndex = 8;
@@ -146,11 +147,22 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Disciplina";
             // 
+            // btnSalir
+            // 
+            this.btnSalir.Location = new System.Drawing.Point(760, 334);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(75, 28);
+            this.btnSalir.TabIndex = 10;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
             // FrmDisciplina
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(856, 372);
+            this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnActualizar);
@@ -159,6 +171,7 @@
             this.Controls.Add(this.btnGuardar);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmDisciplina";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmDisciplina";
             this.Load += new System.EventHandler(this.FrmDisciplina_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridDisciplina)).EndInit();
@@ -180,6 +193,7 @@
         private System.Windows.Forms.Button btnActualizar;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button btnSalir;
 
     }
 }
