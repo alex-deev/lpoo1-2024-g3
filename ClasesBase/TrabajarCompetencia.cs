@@ -90,5 +90,44 @@ namespace ClasesBase
             cmd.ExecuteNonQuery();
             cnn.Close();
         }
+
+        public static DataRow BuscarCompetenciaPorId(int id)
+        {
+            SqlConnection cnn = new SqlConnection(cadenaConexion);
+
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "buscarCompetenciaPorId";
+            cmd.Parameters.AddWithValue("@id", id);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Connection = cnn;
+
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+
+            if (dt.Select().Count() == 0)
+            {
+                return null;
+            } else {
+                return dt.Select().First();
+            }
+        }
+
+        public static Competencia ConvertirCompetencia(DataRow dr)
+        {
+            Competencia oCompetencia = new Competencia();
+            oCompetencia.Com_ID = (int) dr["ID"];
+            oCompetencia.Com_Nombre = (string) dr["Nombre"];
+            oCompetencia.Com_Descripcion = (string) dr["Descripcion"];
+            oCompetencia.Com_FechaInicio = Convert.ToDateTime(dr["FechaInicio"]);
+            oCompetencia.Com_FechaFin = Convert.ToDateTime(dr["FechaFin"]);
+            oCompetencia.Com_Estado = (string) dr["Estado"];
+            oCompetencia.Com_Organizador = (string) dr["Organizador"];
+            oCompetencia.Com_Ubicacion = (string) dr["Ubicacion"];
+            oCompetencia.Com_Sponsors = (string) dr["Sponsors"];
+            oCompetencia.Cat_ID = (int) dr["Cat_ID"];
+            oCompetencia.Dis_ID = (int) dr["Dis_ID"];
+            return oCompetencia;
+        }
     }
 }
