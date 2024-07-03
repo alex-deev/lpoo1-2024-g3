@@ -24,12 +24,8 @@ namespace Vistas
         {
             Cargar_combCompetencia();
 
-            groupInicio.Enabled = false;
-            groupFin.Enabled = false;
-            groupInfoEstado.Enabled = false;
+            groupInfoParticipante.Enabled = false;
             gridParticipantes.Enabled = false;
-            btnHabilitarCorrecion.Enabled = false;
-            btnElegirCompetencia.Enabled = false;
         }
 
         private void Cargar_combCompetencia()
@@ -39,35 +35,21 @@ namespace Vistas
             combCompetencia.DataSource = TrabajarCompetencia.ListarCompetencias();
         }
 
-        private void combCompetencia_TextChanged(object sender, EventArgs e)
+        private void combCompetencia_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            try
-            {
-                DataRow dr = TrabajarCompetencia.BuscarCompetenciaPorId(Convert.ToInt32(combCompetencia.Text));
-                if (dr != null)
-                {
-                    btnElegirCompetencia.Enabled = true;
-                    idCompetencia = Convert.ToInt32(combCompetencia.Text);
-                } else {
-                    btnElegirCompetencia.Enabled = false;
-                }
-            } catch {
-                btnElegirCompetencia.Enabled = false;
-            }
+            idCompetencia = (int)combCompetencia.SelectedValue;
         }
 
-        private void btnElegirCompetencia_Click(object sender, EventArgs e)
+        private void btnCompetencia_Click(object sender, EventArgs e)
         {
             DataTable dt = TrabajarEvento.ListarParticipantesPorCompetencia(idCompetencia);
             if (dt.Rows.Count == 0)
             {
-                MessageBox.Show("La Competencia elegida no tiene participantes inscriptos!");
+                MessageBox.Show("La Competencia elegida no tiene participantes inscriptos!\nSeleccione otra competencia.");
+                gridParticipantes.Enabled = false;
             } else {
-                gridParticipantes.DataSource = dt;
+                Cargar_gridParticipantes();
                 gridParticipantes.Enabled = true;
-
-                combCompetencia.Enabled = false;
-                btnElegirCompetencia.Enabled = false;
             }
         }
 
@@ -75,27 +57,16 @@ namespace Vistas
         {
             if (gridParticipantes.CurrentRow != null)
             {
-                groupInicio.Enabled = false;
-                groupFin.Enabled = false;
-                groupInfoEstado.Enabled = false;
-                btnHabilitarCorrecion.Enabled = false;
+                groupInfoParticipante.Enabled = false;
 
                 idParticipante = (int) gridParticipantes.CurrentRow.Cells["ID"].Value;
 
-                DataRow dr = TrabajarEvento.BuscarEvento(idCompetencia, idParticipante);
-                Evento oEvento = TrabajarEvento.ConvertirEvento(dr);
+                Evento oEvento = ObtenerEvento();
                 if (oEvento.Eve_Estado.Equals("Acreditado"))
                 {
-                    if (oEvento.Eve_HoraInicio == DateTime.MinValue)
-                    {
-                        groupInicio.Enabled = true;
-                    }
-                    if (oEvento.Eve_HoraFin == DateTime.MinValue)
-                    {
-                        groupFin.Enabled = true;
-                    }
-                    groupInfoEstado.Enabled = true;
-                    btnHabilitarCorrecion.Enabled = true;
+                    groupInfoParticipante.Enabled = true;
+                    groupInicio.Enabled = (oEvento.Eve_HoraInicio == DateTime.MinValue);
+                    groupFin.Enabled = (oEvento.Eve_HoraFin == DateTime.MinValue);
                 }
                 CargarInicio(oEvento.Eve_HoraInicio);
                 CargarFin(oEvento.Eve_HoraFin);
@@ -118,23 +89,19 @@ namespace Vistas
 
         private void btnCargarInicio_Click(object sender, EventArgs e)
         {
-            DataRow dr = TrabajarEvento.BuscarEvento(idCompetencia, idParticipante);
-            Evento oEvento = TrabajarEvento.ConvertirEvento(dr);
-            
+            Evento oEvento = ObtenerEvento();
+
             DateTime nuevaHora = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, (int)numHoraInico.Value, (int)numMinutoInicio.Value, (int)numSegundoInicio.Value);
             TrabajarEvento.ActualizarHoraInicio(oEvento.Eve_ID, nuevaHora);
-
             Cargar_gridParticipantes();
         }
 
         private void btnCargarFin_Click(object sender, EventArgs e)
         {
-            DataRow dr = TrabajarEvento.BuscarEvento(idCompetencia, idParticipante);
-            Evento oEvento = TrabajarEvento.ConvertirEvento(dr);
+            Evento oEvento = ObtenerEvento();
 
             DateTime nuevaHora = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, (int)numHoraFin.Value, (int)numMinutoFin.Value, (int)numSegundoFin.Value);
             TrabajarEvento.ActualizarHoraFin(oEvento.Eve_ID, nuevaHora);
-
             Cargar_gridParticipantes();
         }
 
@@ -149,18 +116,24 @@ namespace Vistas
             gridParticipantes.DataSource = TrabajarEvento.ListarParticipantesPorCompetencia(idCompetencia);
         }
 
-        private void btnEstadoAbandono_Click(object sender, EventArgs e)
+        private Evento ObtenerEvento()
         {
             DataRow dr = TrabajarEvento.BuscarEvento(idCompetencia, idParticipante);
-            Evento oEvento = TrabajarEvento.ConvertirEvento(dr);
-            //TrabajarEvento.CambiarEstado(oEvento.Eve_ID, "Abandono");
+            return TrabajarEvento.ConvertirEvento(dr);
+        }
+
+        private void btnEstadoAbandono_Click(object sender, EventArgs e)
+        {
+            Evento oEvento = ObtenerEvento();
+            TrabajarEvento.CambiarEstado(oEvento.Eve_ID, "Abandono");
+            Cargar_gridParticipantes();
         }
 
         private void btnEstadoDescalificado_Click(object sender, EventArgs e)
         {
-            DataRow dr = TrabajarEvento.BuscarEvento(idCompetencia, idParticipante);
-            Evento oEvento = TrabajarEvento.ConvertirEvento(dr);
-            //TrabajarEvento.CambiarEstado(oEvento.Eve_ID, "Descalificado");
+            Evento oEvento = ObtenerEvento();
+            TrabajarEvento.CambiarEstado(oEvento.Eve_ID, "Descalificado");
+            Cargar_gridParticipantes();
         }
     }
 }
