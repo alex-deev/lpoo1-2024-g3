@@ -87,6 +87,23 @@ namespace ClasesBase
             cnn.Close();
         }
 
+        public static void CambiarEstado(int idEvento, string estado)
+        {
+            SqlConnection cnn = new SqlConnection(cadenaConexion);
+
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "actualizarEventoEstado";
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Connection = cnn;
+
+            cmd.Parameters.AddWithValue("@id", idEvento);
+            cmd.Parameters.AddWithValue("@estado", estado);
+
+            cnn.Open();
+            cmd.ExecuteNonQuery();
+            cnn.Close();
+        }
+
         public static Evento ConvertirEvento(DataRow dr)
         {
             Evento oEvento = new Evento();
