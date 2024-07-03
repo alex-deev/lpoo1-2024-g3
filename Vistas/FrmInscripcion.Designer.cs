@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.cbCompetencias = new System.Windows.Forms.ComboBox();
-            this.txtAtletaID = new System.Windows.Forms.TextBox();
             this.btnInscribir = new System.Windows.Forms.Button();
             this.gridEvento = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnSalir = new System.Windows.Forms.Button();
+            this.combParticipantes = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.gridEvento)).BeginInit();
             this.SuspendLayout();
             // 
@@ -47,14 +47,6 @@
             this.cbCompetencias.Name = "cbCompetencias";
             this.cbCompetencias.Size = new System.Drawing.Size(160, 24);
             this.cbCompetencias.TabIndex = 0;
-            // 
-            // txtAtletaID
-            // 
-            this.txtAtletaID.Location = new System.Drawing.Point(648, 78);
-            this.txtAtletaID.Margin = new System.Windows.Forms.Padding(4);
-            this.txtAtletaID.Name = "txtAtletaID";
-            this.txtAtletaID.Size = new System.Drawing.Size(160, 22);
-            this.txtAtletaID.TabIndex = 1;
             // 
             // btnInscribir
             // 
@@ -83,7 +75,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(648, 41);
+            this.label1.Location = new System.Drawing.Point(644, 32);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(78, 24);
@@ -111,17 +103,26 @@
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
+            // combParticipantes
+            // 
+            this.combParticipantes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.combParticipantes.FormattingEnabled = true;
+            this.combParticipantes.Location = new System.Drawing.Point(648, 70);
+            this.combParticipantes.Name = "combParticipantes";
+            this.combParticipantes.Size = new System.Drawing.Size(160, 24);
+            this.combParticipantes.TabIndex = 7;
+            // 
             // FrmInscripcion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(844, 417);
+            this.Controls.Add(this.combParticipantes);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.gridEvento);
             this.Controls.Add(this.btnInscribir);
-            this.Controls.Add(this.txtAtletaID);
             this.Controls.Add(this.cbCompetencias);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmInscripcion";
@@ -137,11 +138,11 @@
         #endregion
 
         private System.Windows.Forms.ComboBox cbCompetencias;
-        private System.Windows.Forms.TextBox txtAtletaID;
         private System.Windows.Forms.Button btnInscribir;
         private System.Windows.Forms.DataGridView gridEvento;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.ComboBox combParticipantes;
     }
 }

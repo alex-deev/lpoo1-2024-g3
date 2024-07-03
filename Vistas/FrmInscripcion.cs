@@ -19,6 +19,7 @@ namespace Vistas
             InitializeComponent();
             CargarCompetencias();
             Cargar_GridEvento();
+            cargarParticipantes();
         }
 
         private void Cargar_GridEvento()
@@ -28,20 +29,21 @@ namespace Vistas
 
         private void CargarCompetencias()
         {
-            List<Competencia> competencias = TrabajarInscripcion.ObtenerCompetenciasDisponibles();
-            cbCompetencias.DataSource = competencias;
-            cbCompetencias.DisplayMember = "Com_Nombre";
-            cbCompetencias.ValueMember = "Com_ID";
+            cbCompetencias.DataSource = TrabajarInscripcion.ObtenerCompetenciasDisponibles();
+            cbCompetencias.DisplayMember = "Nombre";
+            cbCompetencias.ValueMember = "ID";
+        }
+
+        private void cargarParticipantes() 
+        {
+            combParticipantes.DataSource = TrabajarInscripcion.obtenerParticipantes();
+            combParticipantes.DisplayMember = "NombreCompleto";
+            combParticipantes.ValueMember = "ID";
         }
 
         private void btnInscribir_Click(object sender, EventArgs e)
         {
-            int atletaId;
-            if (!int.TryParse(txtAtletaID.Text, out atletaId))
-            {
-                MessageBox.Show("Por favor, ingrese un ID de atleta válido.");
-                return;
-            }
+            int atletaId = (int)combParticipantes.SelectedValue;
 
             int competenciaId = (int)cbCompetencias.SelectedValue;
 
