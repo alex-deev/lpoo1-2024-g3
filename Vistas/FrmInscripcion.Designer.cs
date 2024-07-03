@@ -69,10 +69,13 @@
             // 
             // gridEvento
             // 
+            this.gridEvento.AllowUserToAddRows = false;
+            this.gridEvento.AllowUserToDeleteRows = false;
             this.gridEvento.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridEvento.Location = new System.Drawing.Point(16, 15);
             this.gridEvento.Margin = new System.Windows.Forms.Padding(4);
             this.gridEvento.Name = "gridEvento";
+            this.gridEvento.ReadOnly = true;
             this.gridEvento.Size = new System.Drawing.Size(605, 364);
             this.gridEvento.TabIndex = 3;
             // 
@@ -100,7 +103,7 @@
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(669, 352);
+            this.btnSalir.Location = new System.Drawing.Point(669, 334);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(100, 27);
             this.btnSalir.TabIndex = 6;

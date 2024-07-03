@@ -276,10 +276,12 @@
             // gridParticipantes
             // 
             this.gridParticipantes.AllowUserToAddRows = false;
+            this.gridParticipantes.AllowUserToDeleteRows = false;
             this.gridParticipantes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridParticipantes.Location = new System.Drawing.Point(47, 124);
             this.gridParticipantes.Margin = new System.Windows.Forms.Padding(4);
             this.gridParticipantes.Name = "gridParticipantes";
+            this.gridParticipantes.ReadOnly = true;
             this.gridParticipantes.Size = new System.Drawing.Size(599, 336);
             this.gridParticipantes.TabIndex = 23;
             this.gridParticipantes.CurrentCellChanged += new System.EventHandler(this.gridParticipantes_CurrentCellChanged);

@@ -93,10 +93,12 @@
             // gridCategoria
             // 
             this.gridCategoria.AllowUserToAddRows = false;
+            this.gridCategoria.AllowUserToDeleteRows = false;
             this.gridCategoria.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridCategoria.Location = new System.Drawing.Point(16, 15);
             this.gridCategoria.Margin = new System.Windows.Forms.Padding(4);
             this.gridCategoria.Name = "gridCategoria";
+            this.gridCategoria.ReadOnly = true;
             this.gridCategoria.Size = new System.Drawing.Size(464, 292);
             this.gridCategoria.TabIndex = 5;
             this.gridCategoria.CurrentCellChanged += new System.EventHandler(this.gridCategoria_CurrentCellChanged);

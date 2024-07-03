@@ -77,10 +77,12 @@
             // gridParticipantes
             // 
             this.gridParticipantes.AllowUserToAddRows = false;
+            this.gridParticipantes.AllowUserToDeleteRows = false;
             this.gridParticipantes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridParticipantes.Location = new System.Drawing.Point(20, 121);
             this.gridParticipantes.Margin = new System.Windows.Forms.Padding(4);
             this.gridParticipantes.Name = "gridParticipantes";
+            this.gridParticipantes.ReadOnly = true;
             this.gridParticipantes.Size = new System.Drawing.Size(705, 137);
             this.gridParticipantes.TabIndex = 3;
             this.gridParticipantes.CurrentCellChanged += new System.EventHandler(this.gridParticipantes_CurrentCellChanged);
@@ -88,10 +90,12 @@
             // gridCompetencia
             // 
             this.gridCompetencia.AllowUserToAddRows = false;
+            this.gridCompetencia.AllowUserToDeleteRows = false;
             this.gridCompetencia.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridCompetencia.Location = new System.Drawing.Point(20, 315);
             this.gridCompetencia.Margin = new System.Windows.Forms.Padding(4);
             this.gridCompetencia.Name = "gridCompetencia";
+            this.gridCompetencia.ReadOnly = true;
             this.gridCompetencia.Size = new System.Drawing.Size(705, 185);
             this.gridCompetencia.TabIndex = 6;
             this.gridCompetencia.CurrentCellChanged += new System.EventHandler(this.gridCompetencia_CurrentCellChanged);
