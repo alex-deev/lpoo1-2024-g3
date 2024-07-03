@@ -92,7 +92,7 @@
             // 
             this.combCompetencia.FormattingEnabled = true;
             this.combCompetencia.Location = new System.Drawing.Point(160, 16);
-            this.combCompetencia.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.combCompetencia.Margin = new System.Windows.Forms.Padding(4);
             this.combCompetencia.Name = "combCompetencia";
             this.combCompetencia.Size = new System.Drawing.Size(175, 24);
             this.combCompetencia.TabIndex = 1;
@@ -327,7 +327,7 @@
             // btnElegirCompetencia
             // 
             this.btnElegirCompetencia.Location = new System.Drawing.Point(344, 15);
-            this.btnElegirCompetencia.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnElegirCompetencia.Margin = new System.Windows.Forms.Padding(4);
             this.btnElegirCompetencia.Name = "btnElegirCompetencia";
             this.btnElegirCompetencia.Size = new System.Drawing.Size(79, 28);
             this.btnElegirCompetencia.TabIndex = 7;
@@ -340,8 +340,8 @@
             this.gridParticipantes.AllowUserToAddRows = false;
             this.gridParticipantes.AllowUserToDeleteRows = false;
             this.gridParticipantes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridParticipantes.Location = new System.Drawing.Point(16, 112);
-            this.gridParticipantes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gridParticipantes.Location = new System.Drawing.Point(22, 112);
+            this.gridParticipantes.Margin = new System.Windows.Forms.Padding(4);
             this.gridParticipantes.Name = "gridParticipantes";
             this.gridParticipantes.ReadOnly = true;
             this.gridParticipantes.Size = new System.Drawing.Size(415, 342);
@@ -351,7 +351,7 @@
             // btnHabilitarCorrecion
             // 
             this.btnHabilitarCorrecion.Location = new System.Drawing.Point(577, 426);
-            this.btnHabilitarCorrecion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnHabilitarCorrecion.Margin = new System.Windows.Forms.Padding(4);
             this.btnHabilitarCorrecion.Name = "btnHabilitarCorrecion";
             this.btnHabilitarCorrecion.Size = new System.Drawing.Size(219, 28);
             this.btnHabilitarCorrecion.TabIndex = 10;
@@ -365,9 +365,9 @@
             this.groupInfoEstado.Controls.Add(this.btnEstadoAbandono);
             this.groupInfoEstado.Controls.Add(this.btnEstadoDescalificado);
             this.groupInfoEstado.Location = new System.Drawing.Point(460, 15);
-            this.groupInfoEstado.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupInfoEstado.Margin = new System.Windows.Forms.Padding(4);
             this.groupInfoEstado.Name = "groupInfoEstado";
-            this.groupInfoEstado.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupInfoEstado.Padding = new System.Windows.Forms.Padding(4);
             this.groupInfoEstado.Size = new System.Drawing.Size(453, 103);
             this.groupInfoEstado.TabIndex = 11;
             this.groupInfoEstado.TabStop = false;
@@ -386,7 +386,7 @@
             // btnEstadoAbandono
             // 
             this.btnEstadoAbandono.Location = new System.Drawing.Point(120, 60);
-            this.btnEstadoAbandono.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEstadoAbandono.Margin = new System.Windows.Forms.Padding(4);
             this.btnEstadoAbandono.Name = "btnEstadoAbandono";
             this.btnEstadoAbandono.Size = new System.Drawing.Size(100, 28);
             this.btnEstadoAbandono.TabIndex = 1;
@@ -397,7 +397,7 @@
             // btnEstadoDescalificado
             // 
             this.btnEstadoDescalificado.Location = new System.Drawing.Point(228, 60);
-            this.btnEstadoDescalificado.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEstadoDescalificado.Margin = new System.Windows.Forms.Padding(4);
             this.btnEstadoDescalificado.Name = "btnEstadoDescalificado";
             this.btnEstadoDescalificado.Size = new System.Drawing.Size(107, 28);
             this.btnEstadoDescalificado.TabIndex = 0;
@@ -419,7 +419,7 @@
             this.Controls.Add(this.combCompetencia);
             this.Controls.Add(this.lblTituloParticipante);
             this.Controls.Add(this.lblTituloCompetencia);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmCronometrajes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmCronometrajes";
