@@ -33,9 +33,9 @@ namespace Vistas
         {
             gridResultados.DataSource = TrabajarResultados.mostrarResultados(Convert.ToInt32(comboCompetencias.SelectedValue));
 
-            if (gridResultados.RowCount > 1)
+            if (gridResultados.RowCount >= 1)
             {
-                int cantidad = gridResultados.RowCount - 1;
+                int cantidad = gridResultados.RowCount;
                 txtAtletasParticipantes.Text = cantidad.ToString();
 
                 txtAtletasAbandonaron.Text = Convert.ToString(TrabajarResultados.cantidadAtletasAbandonaron(Convert.ToInt32(comboCompetencias.SelectedValue)));

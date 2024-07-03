@@ -48,9 +48,9 @@
             this.lblCompetencia.AutoSize = true;
             this.lblCompetencia.Location = new System.Drawing.Point(111, 45);
             this.lblCompetencia.Name = "lblCompetencia";
-            this.lblCompetencia.Size = new System.Drawing.Size(206, 17);
+            this.lblCompetencia.Size = new System.Drawing.Size(154, 17);
             this.lblCompetencia.TabIndex = 0;
-            this.lblCompetencia.Text = "Ingrese el ID de la competencia";
+            this.lblCompetencia.Text = "Ingrese la competencia";
             // 
             // btnBuscar
             // 
@@ -64,9 +64,12 @@
             // 
             // gridResultados
             // 
+            this.gridResultados.AllowUserToAddRows = false;
+            this.gridResultados.AllowUserToDeleteRows = false;
             this.gridResultados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridResultados.Location = new System.Drawing.Point(114, 130);
             this.gridResultados.Name = "gridResultados";
+            this.gridResultados.ReadOnly = true;
             this.gridResultados.RowTemplate.Height = 24;
             this.gridResultados.Size = new System.Drawing.Size(637, 304);
             this.gridResultados.TabIndex = 3;
@@ -140,8 +143,9 @@
             // 
             // comboCompetencias
             // 
+            this.comboCompetencias.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboCompetencias.FormattingEnabled = true;
-            this.comboCompetencias.Location = new System.Drawing.Point(357, 43);
+            this.comboCompetencias.Location = new System.Drawing.Point(330, 43);
             this.comboCompetencias.Name = "comboCompetencias";
             this.comboCompetencias.Size = new System.Drawing.Size(169, 24);
             this.comboCompetencias.TabIndex = 13;
