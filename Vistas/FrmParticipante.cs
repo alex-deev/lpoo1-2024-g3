@@ -123,7 +123,7 @@ namespace Vistas
         {
             if(txtApellido.Text == "" || txtDNI.Text == "" || txtNombre.Text == "" ||
                 txtNacionalidad.Text == "" || txtEntrenador.Text == "" || txtEmail.Text == "" ||
-                txtDireccion.Text == "" || numAltura.Value == 0 || numPeso.Value == 0)
+                txtDireccion.Text == "" || numAltura.Value == 0 || numPeso.Value == 0 || cmbGenero.Text == "")
             {
                 return true;
             }else
@@ -213,6 +213,11 @@ namespace Vistas
             {
                 gridParticipantes.DataSource = TrabajarParticipante.listarAtletaPorApellido();
             }
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
     }

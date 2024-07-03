@@ -100,8 +100,17 @@ namespace Vistas
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-            TrabajarCompetencia.ActualizarCompetencia(ExtraerCompetencia());
-            Cargar_gridComptetencias();
+            if (validarCampos())
+            {
+                TrabajarCompetencia.ActualizarCompetencia(ExtraerCompetencia());
+                MessageBox.Show("Se actualizo correctamente la competencia");
+                Cargar_gridComptetencias();
+            }
+            else 
+            {
+                MessageBox.Show("Deben estar completos todos los campos");
+            }
+            
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -110,14 +119,37 @@ namespace Vistas
             if (resultado==DialogResult.Yes)
             {
                 TrabajarCompetencia.EliminarCompetencia(ExtraerCompetencia());
+                MessageBox.Show("Se elimino correctamente la competencia");
                 Cargar_gridComptetencias();
             }
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            TrabajarCompetencia.InsertarCompetencia(ExtraerCompetencia());
-            Cargar_gridComptetencias();
+            if (validarCampos())
+            {
+                TrabajarCompetencia.InsertarCompetencia(ExtraerCompetencia());
+                MessageBox.Show("La competencia fue guardada con exito");
+                Cargar_gridComptetencias();
+            }
+            else 
+            {
+                MessageBox.Show("Debe completar todos los campos");
+            }
+            
+        }
+
+        private bool validarCampos() 
+        {
+            if (txtNombre.Text == "" || txtDescripcion.Text == "" || txtOrganizador.Text == "" || txtUbicacion.Text == ""
+                || txtSponsors.Text == "" || combEstado.Text == "" || combCategoria.Text == "" || combDisciplina.Text == "")
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
@@ -136,6 +168,11 @@ namespace Vistas
             btnActualizar.Enabled = false;
             btnEliminar.Enabled = false;
             btnGuardar.Enabled = true;
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

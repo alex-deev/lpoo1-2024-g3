@@ -57,5 +57,10 @@ namespace Vistas
         {
             Cargar_GridEvento();
         }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

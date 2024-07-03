@@ -34,29 +34,34 @@
             this.gridEvento = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnSalir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gridEvento)).BeginInit();
             this.SuspendLayout();
             // 
             // cbCompetencias
             // 
+            this.cbCompetencias.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbCompetencias.FormattingEnabled = true;
-            this.cbCompetencias.Location = new System.Drawing.Point(486, 138);
+            this.cbCompetencias.Location = new System.Drawing.Point(648, 170);
+            this.cbCompetencias.Margin = new System.Windows.Forms.Padding(4);
             this.cbCompetencias.Name = "cbCompetencias";
-            this.cbCompetencias.Size = new System.Drawing.Size(121, 21);
+            this.cbCompetencias.Size = new System.Drawing.Size(160, 24);
             this.cbCompetencias.TabIndex = 0;
             // 
             // txtAtletaID
             // 
-            this.txtAtletaID.Location = new System.Drawing.Point(486, 63);
+            this.txtAtletaID.Location = new System.Drawing.Point(648, 78);
+            this.txtAtletaID.Margin = new System.Windows.Forms.Padding(4);
             this.txtAtletaID.Name = "txtAtletaID";
-            this.txtAtletaID.Size = new System.Drawing.Size(121, 20);
+            this.txtAtletaID.Size = new System.Drawing.Size(160, 22);
             this.txtAtletaID.TabIndex = 1;
             // 
             // btnInscribir
             // 
-            this.btnInscribir.Location = new System.Drawing.Point(502, 218);
+            this.btnInscribir.Location = new System.Drawing.Point(669, 268);
+            this.btnInscribir.Margin = new System.Windows.Forms.Padding(4);
             this.btnInscribir.Name = "btnInscribir";
-            this.btnInscribir.Size = new System.Drawing.Size(75, 23);
+            this.btnInscribir.Size = new System.Drawing.Size(100, 28);
             this.btnInscribir.TabIndex = 2;
             this.btnInscribir.Text = "Inscribir";
             this.btnInscribir.UseVisualStyleBackColor = true;
@@ -65,18 +70,20 @@
             // gridEvento
             // 
             this.gridEvento.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridEvento.Location = new System.Drawing.Point(12, 12);
+            this.gridEvento.Location = new System.Drawing.Point(16, 15);
+            this.gridEvento.Margin = new System.Windows.Forms.Padding(4);
             this.gridEvento.Name = "gridEvento";
-            this.gridEvento.Size = new System.Drawing.Size(454, 296);
+            this.gridEvento.Size = new System.Drawing.Size(605, 364);
             this.gridEvento.TabIndex = 3;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(486, 33);
+            this.label1.Location = new System.Drawing.Point(648, 41);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(62, 18);
+            this.label1.Size = new System.Drawing.Size(78, 24);
             this.label1.TabIndex = 4;
             this.label1.Text = "Atleta ID";
             // 
@@ -84,24 +91,38 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(486, 112);
+            this.label2.Location = new System.Drawing.Point(648, 138);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(90, 17);
+            this.label2.Size = new System.Drawing.Size(107, 20);
             this.label2.TabIndex = 5;
             this.label2.Text = "Competencia";
             // 
+            // btnSalir
+            // 
+            this.btnSalir.Location = new System.Drawing.Point(669, 352);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(100, 27);
+            this.btnSalir.TabIndex = 6;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
             // FrmInscripcion
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(633, 339);
+            this.ClientSize = new System.Drawing.Size(844, 417);
+            this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.gridEvento);
             this.Controls.Add(this.btnInscribir);
             this.Controls.Add(this.txtAtletaID);
             this.Controls.Add(this.cbCompetencias);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmInscripcion";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmInscripcion";
             this.Load += new System.EventHandler(this.FrmInscripcion_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridEvento)).EndInit();
@@ -118,5 +139,6 @@
         private System.Windows.Forms.DataGridView gridEvento;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnSalir;
     }
 }

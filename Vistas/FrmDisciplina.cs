@@ -55,7 +55,7 @@ namespace Vistas
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(txtNombre.Text) && !string.IsNullOrEmpty(txtDescripcion.Text))
+            if (validarCampos())
             {
                 TrabajarDisciplina.InsertarDisciplina(ExtraerDisciplina());
                 Cargar_GridDisciplina();
@@ -65,6 +65,18 @@ namespace Vistas
                 MessageBox.Show("Debe completar los campos Nombre y Descripcion");
             }
             
+        }
+
+        private bool validarCampos() 
+        {
+            if (!string.IsNullOrEmpty(txtNombre.Text) && !string.IsNullOrEmpty(txtDescripcion.Text))
+            {
+                return true;
+            }
+            else 
+            {
+                return false;
+            }
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
@@ -79,14 +91,29 @@ namespace Vistas
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-            TrabajarDisciplina.ActualizarDisciplina(ExtraerDisciplina());
-            Cargar_GridDisciplina();
+            if (validarCampos())
+            {
+                TrabajarDisciplina.ActualizarDisciplina(ExtraerDisciplina());
+                MessageBox.Show("La disciplina fue actualizada con exito");
+                Cargar_GridDisciplina();
+            }
+            else 
+            {
+                MessageBox.Show("Debe estar completos los campos Nombre y Descripcion");
+            }
+           
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            TrabajarDisciplina.EliminarDisciplina(ExtraerDisciplina());
-            Cargar_GridDisciplina();
+            DialogResult resultado = MessageBox.Show("Desea eliminar el registro?", "Atención", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (resultado == DialogResult.Yes) 
+            {
+                TrabajarDisciplina.EliminarDisciplina(ExtraerDisciplina());
+                MessageBox.Show("La disciplina fue eliminada con exito");
+                Cargar_GridDisciplina();
+            }
+            
         }
 
         private void btnSalir_Click(object sender, EventArgs e)

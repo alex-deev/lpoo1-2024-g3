@@ -66,8 +66,17 @@ namespace Vistas
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-            TrabajarUsuario.ActualizarUsuario(ExtraerUsuario());
-            Cargar_gridUsuarios();
+            if (validarCampos())
+            {
+                TrabajarUsuario.ActualizarUsuario(ExtraerUsuario());
+                MessageBox.Show("El usuario fue actualizado correctamente");
+                Cargar_gridUsuarios();
+            }
+            else 
+            {
+                MessageBox.Show("Deben estar completos todos los campos para actualizar un usuario");
+            }
+            
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -76,14 +85,35 @@ namespace Vistas
             if (resultado==DialogResult.Yes)
             {
                 TrabajarUsuario.EliminarUsuario(ExtraerUsuario());
+                MessageBox.Show("El usuario fue eliminado correctamente");
                 Cargar_gridUsuarios();
             }
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            TrabajarUsuario.InsertarUsuario(ExtraerUsuario());
-            Cargar_gridUsuarios();
+            if (validarCampos())
+            {
+                TrabajarUsuario.InsertarUsuario(ExtraerUsuario());
+                Cargar_gridUsuarios();
+            }
+            else 
+            {
+                MessageBox.Show("Deben estar completos todos los campos para crear un usuario");
+            }
+            
+        }
+
+        private bool validarCampos() 
+        {
+            if (txtUsuario.Text == "" || txtContrasenia.Text == "" || txtApellidoNombre.Text == "")
+            {
+                return false;
+            }
+            else 
+            {
+                return true;
+            }
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
@@ -107,6 +137,11 @@ namespace Vistas
             {
                 gridUsuarios.DataSource = TrabajarUsuario.BuscarUsuarios(txtBuscador.Text);
             }
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

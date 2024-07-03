@@ -28,6 +28,11 @@ namespace Vistas
             else
             {
                 gridParticipantes.DataSource = TrabajarParticipante.buscarParticipante(txtBuscar.Text);
+
+                if (gridParticipantes.RowCount < 1)
+                {
+                    MessageBox.Show("No existe el participante con el DNI ingresado");
+                }
             }
         }
         //CADA VEZ QUE SE CAMBIE DE FILA SE CAMBIARA LAS COMPETENCIAS DEL ATLETA EN EL GRID
@@ -84,6 +89,11 @@ namespace Vistas
                 gridCompetencia.DataSource = null;
                 txtIdCompetencia.Text = null;
             }
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

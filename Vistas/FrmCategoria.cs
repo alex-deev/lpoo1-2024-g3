@@ -19,8 +19,29 @@ namespace Vistas
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            TrabajarCategoria.InsertarCategoria(ExtraerCategoria());
-            CargarCategoria();
+            if (validarCampos()) 
+            {
+                TrabajarCategoria.InsertarCategoria(ExtraerCategoria());
+                MessageBox.Show("La categoria se guardo con exito");
+                CargarCategoria();
+            }
+            else
+            {
+                MessageBox.Show("Deeben estar completos los campos nombre y descripcion");
+            }
+            
+        }
+
+        private bool validarCampos()
+        {
+            if (!string.IsNullOrEmpty(txtNombre.Text) && !string.IsNullOrEmpty(txtDescripcion.Text))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         private void CargarCategoria()
@@ -57,14 +78,29 @@ namespace Vistas
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-            TrabajarCategoria.ActualizarCategoria(ExtraerCategoria());
-            CargarCategoria();
+            if (validarCampos())
+            {
+                TrabajarCategoria.ActualizarCategoria(ExtraerCategoria());
+                MessageBox.Show("Se actualizo correctamente la categoria");
+                CargarCategoria();
+            }
+            else 
+            {
+                MessageBox.Show("Deeben estar completos los campos nombre y descripcion");
+            }
+            
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            TrabajarCategoria.EliminarCategoria(ExtraerCategoria());
-            CargarCategoria();
+            DialogResult resultado = MessageBox.Show("Desea eliminar el registro?", "Atención", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (resultado == DialogResult.Yes) 
+            {
+                TrabajarCategoria.EliminarCategoria(ExtraerCategoria());
+                MessageBox.Show("Se elimino correctamente la categoria");
+                CargarCategoria();
+            }
+            
         }
 
         private void FrmCategoria_Load(object sender, EventArgs e)
@@ -83,6 +119,11 @@ namespace Vistas
                 btnEliminar.Enabled = true;
                 btnGuardar.Enabled = false;
             }
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
     }

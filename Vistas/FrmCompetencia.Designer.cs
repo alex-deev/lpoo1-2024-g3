@@ -54,6 +54,7 @@
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
+            this.btnSalir = new System.Windows.Forms.Button();
             this.groupDatos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridCompetencias)).BeginInit();
             this.SuspendLayout();
@@ -91,18 +92,20 @@
             // 
             // combEstado
             // 
+            this.combEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.combEstado.FormattingEnabled = true;
             this.combEstado.Location = new System.Drawing.Point(141, 185);
-            this.combEstado.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.combEstado.Margin = new System.Windows.Forms.Padding(4);
             this.combEstado.Name = "combEstado";
             this.combEstado.Size = new System.Drawing.Size(159, 24);
             this.combEstado.TabIndex = 28;
             // 
             // combCategoria
             // 
+            this.combCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.combCategoria.FormattingEnabled = true;
             this.combCategoria.Location = new System.Drawing.Point(141, 313);
-            this.combCategoria.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.combCategoria.Margin = new System.Windows.Forms.Padding(4);
             this.combCategoria.Name = "combCategoria";
             this.combCategoria.Size = new System.Drawing.Size(159, 24);
             this.combCategoria.TabIndex = 27;
@@ -209,9 +212,10 @@
             // 
             // combDisciplina
             // 
+            this.combDisciplina.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.combDisciplina.FormattingEnabled = true;
             this.combDisciplina.Location = new System.Drawing.Point(141, 345);
-            this.combDisciplina.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.combDisciplina.Margin = new System.Windows.Forms.Padding(4);
             this.combDisciplina.Name = "combDisciplina";
             this.combDisciplina.Size = new System.Drawing.Size(159, 24);
             this.combDisciplina.TabIndex = 16;
@@ -220,7 +224,7 @@
             // 
             this.dateFechaInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateFechaInicio.Location = new System.Drawing.Point(141, 121);
-            this.dateFechaInicio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dateFechaInicio.Margin = new System.Windows.Forms.Padding(4);
             this.dateFechaInicio.Name = "dateFechaInicio";
             this.dateFechaInicio.Size = new System.Drawing.Size(159, 22);
             this.dateFechaInicio.TabIndex = 15;
@@ -229,7 +233,7 @@
             // 
             this.dateFechaFin.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateFechaFin.Location = new System.Drawing.Point(141, 153);
-            this.dateFechaFin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dateFechaFin.Margin = new System.Windows.Forms.Padding(4);
             this.dateFechaFin.Name = "dateFechaFin";
             this.dateFechaFin.Size = new System.Drawing.Size(159, 22);
             this.dateFechaFin.TabIndex = 14;
@@ -237,7 +241,7 @@
             // txtSponsors
             // 
             this.txtSponsors.Location = new System.Drawing.Point(141, 281);
-            this.txtSponsors.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSponsors.Margin = new System.Windows.Forms.Padding(4);
             this.txtSponsors.Name = "txtSponsors";
             this.txtSponsors.Size = new System.Drawing.Size(159, 22);
             this.txtSponsors.TabIndex = 13;
@@ -245,7 +249,7 @@
             // txtUbicacion
             // 
             this.txtUbicacion.Location = new System.Drawing.Point(141, 249);
-            this.txtUbicacion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtUbicacion.Margin = new System.Windows.Forms.Padding(4);
             this.txtUbicacion.Name = "txtUbicacion";
             this.txtUbicacion.Size = new System.Drawing.Size(159, 22);
             this.txtUbicacion.TabIndex = 12;
@@ -253,7 +257,7 @@
             // txtOrganizador
             // 
             this.txtOrganizador.Location = new System.Drawing.Point(141, 217);
-            this.txtOrganizador.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtOrganizador.Margin = new System.Windows.Forms.Padding(4);
             this.txtOrganizador.Name = "txtOrganizador";
             this.txtOrganizador.Size = new System.Drawing.Size(159, 22);
             this.txtOrganizador.TabIndex = 11;
@@ -261,7 +265,7 @@
             // txtDescripcion
             // 
             this.txtDescripcion.Location = new System.Drawing.Point(141, 64);
-            this.txtDescripcion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDescripcion.Margin = new System.Windows.Forms.Padding(4);
             this.txtDescripcion.Multiline = true;
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(159, 48);
@@ -270,7 +274,7 @@
             // txtNombre
             // 
             this.txtNombre.Location = new System.Drawing.Point(141, 32);
-            this.txtNombre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(4);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(159, 22);
             this.txtNombre.TabIndex = 6;
@@ -281,7 +285,7 @@
             this.gridCompetencias.AllowUserToDeleteRows = false;
             this.gridCompetencias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridCompetencias.Location = new System.Drawing.Point(16, 15);
-            this.gridCompetencias.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gridCompetencias.Margin = new System.Windows.Forms.Padding(4);
             this.gridCompetencias.Name = "gridCompetencias";
             this.gridCompetencias.ReadOnly = true;
             this.gridCompetencias.Size = new System.Drawing.Size(573, 398);
@@ -291,7 +295,7 @@
             // btnActualizar
             // 
             this.btnActualizar.Location = new System.Drawing.Point(820, 426);
-            this.btnActualizar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnActualizar.Margin = new System.Windows.Forms.Padding(4);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(100, 28);
             this.btnActualizar.TabIndex = 2;
@@ -302,7 +306,7 @@
             // btnEliminar
             // 
             this.btnEliminar.Location = new System.Drawing.Point(712, 426);
-            this.btnEliminar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(4);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(100, 28);
             this.btnEliminar.TabIndex = 3;
@@ -313,7 +317,7 @@
             // btnGuardar
             // 
             this.btnGuardar.Location = new System.Drawing.Point(489, 426);
-            this.btnGuardar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGuardar.Margin = new System.Windows.Forms.Padding(4);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(100, 28);
             this.btnGuardar.TabIndex = 4;
@@ -324,7 +328,7 @@
             // btnNuevo
             // 
             this.btnNuevo.Location = new System.Drawing.Point(381, 426);
-            this.btnNuevo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnNuevo.Margin = new System.Windows.Forms.Padding(4);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(100, 28);
             this.btnNuevo.TabIndex = 5;
@@ -332,19 +336,31 @@
             this.btnNuevo.UseVisualStyleBackColor = true;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
+            // btnSalir
+            // 
+            this.btnSalir.Location = new System.Drawing.Point(177, 426);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(87, 28);
+            this.btnSalir.TabIndex = 6;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
             // FrmCompetencia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(936, 469);
+            this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.gridCompetencias);
             this.Controls.Add(this.groupDatos);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmCompetencia";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmCompetencias";
             this.Load += new System.EventHandler(this.FrmCompetencia_Load);
             this.groupDatos.ResumeLayout(false);
@@ -382,5 +398,6 @@
         private System.Windows.Forms.Label lblFechaFin;
         private System.Windows.Forms.Label lblFechaInicio;
         private System.Windows.Forms.ComboBox combEstado;
+        private System.Windows.Forms.Button btnSalir;
     }
 }
