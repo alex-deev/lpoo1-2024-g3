@@ -54,6 +54,7 @@
             this.btnEstadoAbandono = new System.Windows.Forms.Button();
             this.btnEstadoDescalificado = new System.Windows.Forms.Button();
             this.btnCompetencia = new System.Windows.Forms.Button();
+            this.btnSalir = new System.Windows.Forms.Button();
             this.groupInicio.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numSegundoInicio)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numMinutoInicio)).BeginInit();
@@ -330,7 +331,7 @@
             this.gridParticipantes.Location = new System.Drawing.Point(12, 75);
             this.gridParticipantes.Name = "gridParticipantes";
             this.gridParticipantes.ReadOnly = true;
-            this.gridParticipantes.Size = new System.Drawing.Size(311, 294);
+            this.gridParticipantes.Size = new System.Drawing.Size(433, 294);
             this.gridParticipantes.TabIndex = 9;
             this.gridParticipantes.CurrentCellChanged += new System.EventHandler(this.gridParticipantes_CurrentCellChanged);
             // 
@@ -353,7 +354,7 @@
             this.groupInfoParticipante.Controls.Add(this.btnEstadoDescalificado);
             this.groupInfoParticipante.Controls.Add(this.groupInicio);
             this.groupInfoParticipante.Controls.Add(this.groupFin);
-            this.groupInfoParticipante.Location = new System.Drawing.Point(345, 12);
+            this.groupInfoParticipante.Location = new System.Drawing.Point(462, 13);
             this.groupInfoParticipante.Name = "groupInfoParticipante";
             this.groupInfoParticipante.Size = new System.Drawing.Size(345, 357);
             this.groupInfoParticipante.TabIndex = 11;
@@ -399,11 +400,22 @@
             this.btnCompetencia.UseVisualStyleBackColor = true;
             this.btnCompetencia.Click += new System.EventHandler(this.btnCompetencia_Click);
             // 
+            // btnSalir
+            // 
+            this.btnSalir.Location = new System.Drawing.Point(12, 375);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(75, 23);
+            this.btnSalir.TabIndex = 13;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
             // FrmCronometrajes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(702, 381);
+            this.ClientSize = new System.Drawing.Size(819, 405);
+            this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnCompetencia);
             this.Controls.Add(this.groupInfoParticipante);
             this.Controls.Add(this.gridParticipantes);
@@ -460,5 +472,6 @@
         private System.Windows.Forms.Button btnEstadoDescalificado;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnCompetencia;
+        private System.Windows.Forms.Button btnSalir;
     }
 }

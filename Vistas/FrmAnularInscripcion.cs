@@ -64,7 +64,8 @@ namespace Vistas
             else
             {
                 //SE OBTIENE EL ID DE LA COMPETENCIA Y SE CAMBIA EL EVENTO A 'ANULADO'
-                TrabajarParticipante.modificarEvento(Convert.ToInt32(txtIdCompetencia.Text));
+                int idAtleta = Convert.ToInt32(gridParticipantes.CurrentRow.Cells["Id"].Value);
+                TrabajarParticipante.modificarEvento(Convert.ToInt32(txtIdCompetencia.Text), idAtleta);
                 MessageBox.Show("Competencia Anulada con exito");
                 //SE LIMPIAN LOS GRID
                 gridParticipantes.DataSource = null;
@@ -82,7 +83,8 @@ namespace Vistas
             else
             {
                 //SE OBTIENE EL ID DE LA COMPETENCIA Y SE CAMBIA EL EVENTO A 'ANULADO'
-                TrabajarParticipante.acreditarIscripcion(Convert.ToInt32(txtIdCompetencia.Text));
+                int idAtleta = Convert.ToInt32(gridParticipantes.CurrentRow.Cells["Id"].Value);
+                TrabajarParticipante.acreditarIscripcion(Convert.ToInt32(txtIdCompetencia.Text), idAtleta);
                 MessageBox.Show("Competencia Acreditada con exito");
                 //SE LIMPIAN LOS GRID
                 gridParticipantes.DataSource = null;

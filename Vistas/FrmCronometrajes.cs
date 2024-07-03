@@ -30,7 +30,7 @@ namespace Vistas
 
         private void Cargar_combCompetencia()
         {
-            combCompetencia.DisplayMember = "ID Competencia";
+            combCompetencia.DisplayMember = "Nombre";
             combCompetencia.ValueMember = "ID Competencia";
             combCompetencia.DataSource = TrabajarCompetencia.ListarCompetencias();
         }
@@ -59,7 +59,7 @@ namespace Vistas
             {
                 groupInfoParticipante.Enabled = false;
 
-                idParticipante = (int) gridParticipantes.CurrentRow.Cells["ID"].Value;
+                idParticipante = (int) gridParticipantes.CurrentRow.Cells["Atl_ID"].Value;
 
                 Evento oEvento = ObtenerEvento();
                 if (oEvento.Eve_Estado.Equals("Acreditado"))
@@ -67,6 +67,7 @@ namespace Vistas
                     groupInfoParticipante.Enabled = true;
                     groupInicio.Enabled = (oEvento.Eve_HoraInicio == DateTime.MinValue);
                     groupFin.Enabled = (oEvento.Eve_HoraFin == DateTime.MinValue);
+                    btnHabilitarCorrecion.Enabled = true;
                 }
                 CargarInicio(oEvento.Eve_HoraInicio);
                 CargarFin(oEvento.Eve_HoraFin);
@@ -90,25 +91,43 @@ namespace Vistas
         private void btnCargarInicio_Click(object sender, EventArgs e)
         {
             Evento oEvento = ObtenerEvento();
+            DateTime nuevaHoraInicio = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, (int)numHoraInico.Value, (int)numMinutoInicio.Value, (int)numSegundoInicio.Value);
+            DateTime horaFin = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, (int)numHoraFin.Value, (int)numMinutoFin.Value, (int)numSegundoFin.Value);
 
-            DateTime nuevaHora = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, (int)numHoraInico.Value, (int)numMinutoInicio.Value, (int)numSegundoInicio.Value);
-            TrabajarEvento.ActualizarHoraInicio(oEvento.Eve_ID, nuevaHora);
-            Cargar_gridParticipantes();
+            if (!string.IsNullOrEmpty(gridParticipantes.CurrentRow.Cells["HoraFin"].Value.ToString())
+            && TimeSpan.Compare(nuevaHoraInicio.TimeOfDay, horaFin.TimeOfDay) >= 0)
+            {
+                MessageBox.Show("No se puede cargar una hora de Inicio posterior o igual a la hora de Finalización.");
+            } else {
+                TrabajarEvento.ActualizarHoraInicio(oEvento.Eve_ID, nuevaHoraInicio);
+                Cargar_gridParticipantes();
+            }
         }
 
         private void btnCargarFin_Click(object sender, EventArgs e)
         {
             Evento oEvento = ObtenerEvento();
+            DateTime nuevaHoraFin = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, (int)numHoraFin.Value, (int)numMinutoFin.Value, (int)numSegundoFin.Value);
 
-            DateTime nuevaHora = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, (int)numHoraFin.Value, (int)numMinutoFin.Value, (int)numSegundoFin.Value);
-            TrabajarEvento.ActualizarHoraFin(oEvento.Eve_ID, nuevaHora);
-            Cargar_gridParticipantes();
+            if (string.IsNullOrEmpty(gridParticipantes.CurrentRow.Cells["HoraInicio"].Value.ToString()))
+            {
+                MessageBox.Show("No se puede cagar una hora de Finalización sin tener la hora de Inicio");
+            } else {
+                if (TimeSpan.Compare(nuevaHoraFin.TimeOfDay, oEvento.Eve_HoraInicio.TimeOfDay) <= 0)
+                {
+                    MessageBox.Show("No se puede cargar una hora de Finalización anterior o igual a la hora de Inicio!");
+                } else {
+                    TrabajarEvento.ActualizarHoraFin(oEvento.Eve_ID, nuevaHoraFin);
+                    Cargar_gridParticipantes();
+                }
+            } 
         }
 
         private void btnHabilitarCorrecion_Click(object sender, EventArgs e)
         {
             groupInicio.Enabled = true;
             groupFin.Enabled = true;
+            btnHabilitarCorrecion.Enabled = false;
         }
 
         private void Cargar_gridParticipantes()
@@ -134,6 +153,11 @@ namespace Vistas
             Evento oEvento = ObtenerEvento();
             TrabajarEvento.CambiarEstado(oEvento.Eve_ID, "Descalificado");
             Cargar_gridParticipantes();
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

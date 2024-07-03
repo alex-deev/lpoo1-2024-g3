@@ -30,6 +30,9 @@ namespace Vistas
             itemParticipantes.Enabled = false;
             itemUsuarios.Enabled = false;
             itemCompetencias.Enabled = false;
+            itemInscripcion.Enabled = false;
+            itemResultados.Enabled = false;
+            itemCronometrajes.Enabled = false;
 
             switch (CodigoRol)
             { 
@@ -46,6 +49,9 @@ namespace Vistas
                     itemParticipantes.Enabled = true;
                     itemUsuarios.Enabled = true;
                     itemCompetencias.Enabled = true;
+                    itemInscripcion.Enabled = true;
+                    itemResultados.Enabled = true;
+                    itemCronometrajes.Enabled = true;
                     break;
                 default:
                     break;

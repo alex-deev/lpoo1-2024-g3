@@ -38,19 +38,18 @@ namespace Vistas
                 int cantidad = gridResultados.RowCount;
                 txtAtletasParticipantes.Text = cantidad.ToString();
 
-                txtAtletasAbandonaron.Text = Convert.ToString(TrabajarResultados.cantidadAtletasAbandonaron(Convert.ToInt32(comboCompetencias.SelectedValue)));
-
-                txtAtletasDescalificados.Text = Convert.ToString(TrabajarResultados.cantidadAtletasDescalificados(Convert.ToInt32(comboCompetencias.SelectedValue)));
             }
             else
             {
-                MessageBox.Show("La competencia: " + comboCompetencias.Text + " no tiene resultados");
-                txtAtletasParticipantes.Text = "";
+                MessageBox.Show("La competencia: " + comboCompetencias.Text + " no tiene competidores!");
+                txtAtletasParticipantes.Text = "0";
                 txtAtletasAbandonaron.Text = "";
                 txtAtletasDescalificados.Text = "";
             }
 
-            
+            txtAtletasAbandonaron.Text = Convert.ToString(TrabajarResultados.cantidadAtletasAbandonaron(Convert.ToInt32(comboCompetencias.SelectedValue)));
+
+            txtAtletasDescalificados.Text = Convert.ToString(TrabajarResultados.cantidadAtletasDescalificados(Convert.ToInt32(comboCompetencias.SelectedValue)));
         }
 
         private void btnSalir_Click(object sender, EventArgs e)

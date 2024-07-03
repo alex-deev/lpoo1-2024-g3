@@ -80,22 +80,22 @@ namespace Vistas
 
         private Competencia ExtraerCompetencia()
         {
-            Competencia oCom = new Competencia();
+            Competencia oCompetencia = new Competencia();
             if (gridCompetencias.CurrentRow != null) {
-                oCom.Com_ID = (int)gridCompetencias.CurrentRow.Cells["ID Competencia"].Value;
+                oCompetencia.Com_ID = (int)gridCompetencias.CurrentRow.Cells["ID Competencia"].Value;
             }
             
-            oCom.Com_Nombre = txtNombre.Text;
-            oCom.Com_Descripcion = txtDescripcion.Text;
-            oCom.Com_FechaInicio = dateFechaInicio.Value;
-            oCom.Com_FechaFin = dateFechaInicio.Value;
-            oCom.Com_Estado = combEstado.SelectedValue.ToString();
-            oCom.Com_Organizador = txtOrganizador.Text;
-            oCom.Com_Ubicacion = txtUbicacion.Text;
-            oCom.Com_Sponsors = txtSponsors.Text;
-            oCom.Cat_ID = (int) combCategoria.SelectedValue;
-            oCom.Dis_ID = (int) combDisciplina.SelectedValue;
-            return oCom;
+            oCompetencia.Com_Nombre = txtNombre.Text;
+            oCompetencia.Com_Descripcion = txtDescripcion.Text;
+            oCompetencia.Com_FechaInicio = dateFechaInicio.Value;
+            oCompetencia.Com_FechaFin = dateFechaFin.Value;
+            oCompetencia.Com_Estado = combEstado.SelectedValue.ToString();
+            oCompetencia.Com_Organizador = txtOrganizador.Text;
+            oCompetencia.Com_Ubicacion = txtUbicacion.Text;
+            oCompetencia.Com_Sponsors = txtSponsors.Text;
+            oCompetencia.Cat_ID = (int) combCategoria.SelectedValue;
+            oCompetencia.Dis_ID = (int) combDisciplina.SelectedValue;
+            return oCompetencia;
         }
 
         private void btnActualizar_Click(object sender, EventArgs e)

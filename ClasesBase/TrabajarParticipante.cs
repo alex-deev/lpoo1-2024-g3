@@ -189,7 +189,7 @@ namespace ClasesBase
             return dt;
         }
 
-        public static void modificarEvento(int idCompetencia)
+        public static void modificarEvento(int idCompetencia, int idAtleta)
         {
             SqlConnection cnn = new SqlConnection(cadenaConexion);
             SqlCommand cmd = new SqlCommand();
@@ -198,13 +198,14 @@ namespace ClasesBase
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Connection = cnn;
 
-            cmd.Parameters.AddWithValue("@id", idCompetencia );
+            cmd.Parameters.AddWithValue("@idCompetencia", idCompetencia);
+            cmd.Parameters.AddWithValue("@idAtleta", idAtleta);
 
             cnn.Open();
             cmd.ExecuteNonQuery();
             cnn.Close();
         }
-        public static void acreditarIscripcion(int idCompetencia)
+        public static void acreditarIscripcion(int idCompetencia, int idAtleta)
         {
             SqlConnection cnn = new SqlConnection(cadenaConexion);
             SqlCommand cmd = new SqlCommand();
@@ -213,7 +214,8 @@ namespace ClasesBase
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Connection = cnn;
 
-            cmd.Parameters.AddWithValue("@id", idCompetencia);
+            cmd.Parameters.AddWithValue("@idCompetencia", idCompetencia);
+            cmd.Parameters.AddWithValue("@idAtleta", idAtleta);
 
             cnn.Open();
             cmd.ExecuteNonQuery();
