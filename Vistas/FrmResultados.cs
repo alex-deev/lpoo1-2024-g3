@@ -41,7 +41,7 @@ namespace Vistas
             }
             else
             {
-                MessageBox.Show("La competencia: " + comboCompetencias.Text + " no tiene competidores!");
+                MessageBox.Show("La competencia: " + comboCompetencias.Text + " aun no tiene resultados!");
                 txtAtletasParticipantes.Text = "0";
                 txtAtletasAbandonaron.Text = "";
                 txtAtletasDescalificados.Text = "";

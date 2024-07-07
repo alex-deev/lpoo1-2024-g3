@@ -58,6 +58,7 @@ namespace Vistas
             if (validarCampos())
             {
                 TrabajarDisciplina.InsertarDisciplina(ExtraerDisciplina());
+                MessageBox.Show("La disciplina se guardo con exito");
                 Cargar_GridDisciplina();
             }
             else 
